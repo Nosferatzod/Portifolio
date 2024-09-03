@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Meu Portfólio</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./images/logo.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./projects.html">Projetos</a></li>
+                <li><a href="./about.html">Sobre Mim</a></li>
+                <li><a href="./contact.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="contact">
+            <h1>Contato</h1>
+            <form action="https://formspree.io/f/your-form-id" method="POST">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="subject">Assunto:</label>
+                <input type="text" id="subject" name="subject" required>
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div class="social-media">
+            <a href="https://www.linkedin.com/in/kaua-francino-85b154183/" target="_blank"><img src="./images/linkedin.png"LinkedIn">linkedin</a>
+            <a href="https://github.com/Nosferatzod" target="_blank"><img src="./images/github.png" alt="GitHub">GitHub</a>
+        </div>
+        <p>&copy; 2024 Kauã Francino dos Santos Lima. Todos os direitos reservados.</p>
+    </footer>
+    <script src="./js/scripts.js"></script>
+</body>
+</html>

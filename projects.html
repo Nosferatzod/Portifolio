@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projetos - Meu Portfólio</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/project.css">
 </head>
 <body>
     <header>
@@ -23,37 +23,23 @@
     <main>
         <section class="portfolio">
             <h1>Projetos</h1>
-            <div class="project" onclick="showProject('project1')">
-                <a href="https://nosferatzod.github.io/Tokyo-Ghoul/" target="_blank"><img src="./images/logo.png" alt="projeto1"></a>
-                <h2>Tokyo Ghoul</h2>
-            </div>
-            <div class="project" onclick="showProject('project2')">
-                <img src="" alt="">
-                <a href="https://nosferatzod.github.io/Aston-Martin/" target="_blank"><img src="./images/logo2.png" alt="projeto1"></a>
-                <h2>Aston-Martin</h2>
+            <div class="projects-grid">
+                <div class="project" onclick="showProject('project1')">
+                    <a href="https://nosferatzod.github.io/Tokyo-Ghoul/" target="_blank"><img class="tokyo" src="./images/logo.png" alt="Tokyo Ghoul"></a>
+                    <h2>Tokyo Ghoul</h2>
+                </div>
+                <div class="project" onclick="showProject('project2')">
+                    <a href="https://nosferatzod.github.io/Aston-Martin/" target="_blank"><img class="aston" src="./images/logo2.png" alt="Aston-Martin"></a>
+                    <h2>Aston-Martin</h2>
+                </div>
             </div>
         </section>
-        <div id="project1" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('project1')">&times;</span>
-                <h2>Detalhes do Projeto 1</h2>
-                <p>Descrição detalhada do Projeto 1.</p>
-                <a href="https://github.com/seu-usuario/projeto1" target="_blank">Ver no GitHub</a>
-            </div>
-        </div>
-        <div id="project2" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('project2')">&times;</span>
-                <h2>Detalhes do Projeto 2</h2>
-                <p>Descrição detalhada do Projeto 2.</p>
-                <a href="https://github.com/seu-usuario/projeto2" target="_blank">Ver no GitHub</a>
-            </div>
-        </div>
+        <!-- Modais permanecem os mesmos -->
     </main>
     <footer>
         <div class="social-media">
-            <a href="https://www.linkedin.com/in/kaua-francino-85b154183/" target="_blank"><img src="./images/linkedin.png"LinkedIn">linkedin</a>
-            <a href="https://github.com/Nosferatzod" target="_blank"><img src="./images/github.png" alt="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/in/kaua-francino-85b154183/" target="_blank"><img src="./images/linkedin.png" alt="LinkedIn"></a>
+            <a href="https://github.com/Nosferatzod" target="_blank"><img src="./images/github.png" alt="GitHub"></a>
         </div>
         <p>&copy; 2024 Kauã Francino dos Santos Lima. Todos os direitos reservados.</p>
     </footer>

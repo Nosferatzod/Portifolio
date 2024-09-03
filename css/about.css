@@ -40,12 +40,13 @@ nav ul li a {
     transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
-    color: #6c5478;
+nav ul li a:hover, nav ul li a.active {
+    color: #8200b2;
+    font-weight: 700;
 }
 
 .hero {
-    background-image: url('./images/background.jpg'); /* Adicione uma imagem de fundo sutil */
+    background-image: url('./images/background.jpg');
     background-size: cover;
     background-position: center;
     padding: 4rem 0;
@@ -55,25 +56,27 @@ nav ul li a:hover {
 }
 
 .hero-content {
-    background-color: #1f242f;
+    background-color: rgba(31, 36, 47, 0.9);
     display: inline-block;
     padding: 2rem;
     border-radius: 8px;
+    max-width: 600px;
+    margin: auto;
 }
 
 .hero-content .avatar {
-    width: 150px; /* Ajuste o tamanho conforme necessário */
-    height: 150px; /* Garante que a imagem seja quadrada */
-    border-radius: 50%; /* Torna a imagem redonda */
-    border: 5px solid #4b0076; /* Borda branca */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para um efeito de destaque */
-    object-fit: cover; /* Garante que a imagem preencha o círculo */
-    margin: 20px; /* Espaçamento em volta da imagem */
-    transition: transform 0.3s; /* Transição suave para efeitos */
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #4b0076;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+    margin: 20px;
+    transition: transform 0.3s;
 }
 
 .hero-content .avatar:hover {
-    transform: scale(1.05); /* Aumenta um pouco a imagem ao passar o mouse */
+    transform: scale(1.05);
 }
 
 .hero h1 {
@@ -113,6 +116,7 @@ nav ul li a:hover {
     border-radius: 8px;
     margin: 2rem auto;
     max-width: 800px;
+    text-align: center;
 }
 
 .about h2 {
@@ -126,8 +130,6 @@ footer {
     padding: 1rem;
     text-align: center;
     color: #ffffff;
-    position: relative;
-    bottom: 0;
     width: 100%;
 }
 
@@ -138,7 +140,7 @@ footer .social-media a {
 }
 
 footer .social-media a:hover {
-    color: #2f1639;
+    color: #aa00ff;
 }
 
 footer .social-media img {

@@ -40,8 +40,9 @@ nav ul li a {
     transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
-    color: #6c5478;
+nav ul li a:hover, nav ul li a.active {
+    color: #8200b2;
+    font-weight: 700;
 }
 
 .hero {

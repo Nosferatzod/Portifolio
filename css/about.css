@@ -148,3 +148,28 @@ footer .social-media img {
     height: 24px;
     vertical-align: middle;
 }
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.skill-card {
+    background-color: #2f1639;
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: scale(1.05);
+    background-color: #6c5478;
+}
+

@@ -21,26 +21,34 @@
             </ul>
         </nav>
     </header>
-    <main>
+    <main >
         <section class="contact">
             <h1>Contato</h1>
             <form action="https://formspree.io/f/your-form-id" method="POST">
                 <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" required aria-label="Nome">
+                
                 <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" required aria-label="E-mail">
+                
                 <label for="subject">Assunto:</label>
-                <input type="text" id="subject" name="subject" required>
+                <input type="text" id="subject" name="subject" required aria-label="Assunto">
+                
                 <label for="message">Mensagem:</label>
-                <textarea id="message" name="message" required></textarea>
+                <textarea id="message" name="message" required aria-label="Mensagem"></textarea>
+                
                 <button type="submit">Enviar</button>
             </form>
         </section>
     </main>
     <footer>
         <div class="social-media">
-            <a href="https://www.linkedin.com/in/kaua-francino-85b154183/" target="_blank"><img src="./images/linkedin.png"LinkedIn"></a>
-            <a href="https://github.com/Nosferatzod" target="_blank"><img src="./images/github.png" alt="GitHub"></a>
+            <a href="https://www.linkedin.com/in/kaua-francino-85b154183/" target="_blank" aria-label="LinkedIn">
+                <img src="./images/linkedin.png" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/Nosferatzod" target="_blank" aria-label="GitHub">
+                <img src="./images/github.png" alt="GitHub">
+            </a>
         </div>
         <p>&copy; 2024 Kauã Francino dos Santos Lima. Todos os direitos reservados.</p>
     </footer>

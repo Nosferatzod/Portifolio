@@ -64,9 +64,9 @@ main {
 }
 
 .project {
-    background-color: #2f1639;
+    background-color: #4e4e4e;
     padding: 1rem;
-    border-radius: 10px;
+    border-radius: 40px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
@@ -78,7 +78,7 @@ main {
 }
 
 .project img {
-    max-width: 90%;
+    max-width: 70%;
     height: auto;
     border-radius: 8px;
     margin-bottom: 1rem;

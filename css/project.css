@@ -16,7 +16,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.616);
     color: #ffffff;
     position: sticky;
     top: 0;
@@ -64,7 +64,7 @@ main {
 }
 
 .project {
-    background-color: #4e4e4e;
+    background-color: #4e4e4ebd;
     padding: 1rem;
     border-radius: 40px;
     text-align: center;
@@ -126,7 +126,7 @@ main {
 }
 
 footer {
-    background-color: #484848;
+    background-color: #48484891;
     padding: 20px;
     text-align: center;
     position: fixed;

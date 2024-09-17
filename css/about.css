@@ -16,7 +16,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: #000000;
+    background-color: #000000a2;
     color: #ffffff;
 }
 
@@ -112,7 +112,7 @@ nav ul li a:hover, nav ul li a.active {
 
 .about {
     padding: 2rem 4rem;
-    background-color: #6c5478;
+    background-color: #6c5478ce;
     border-radius: 8px;
     margin: 2rem auto;
     max-width: 800px;
@@ -126,7 +126,7 @@ nav ul li a:hover, nav ul li a.active {
 }
 
 footer {
-    background-color: #333;
+    background-color: #333333a2;
     padding: 1rem;
     text-align: center;
     color: #ffffff;

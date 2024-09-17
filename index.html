@@ -1,52 +1,45 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <link rel="icon" href="./images/logo.png" type="image/png">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Meu Portfólio</title>
-    <link rel="stylesheet" href="./css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <header>
-        <div class="logo">
-            <img src="./images/logo.png" alt="Logo">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="./index.html" class="active">Home</a></li>
-                <li><a href="./projects.html">Projetos</a></li>
-                <li><a href="./about.html">Sobre Mim</a></li>
-                <li><a href="./contact.html">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main class="container">
-        <section class="hero">
-            <div class="hero-content">
-                <img src="./images/git.png" alt="Avatar" class="avatar">
-                <h1>Olá, eu sou <span>Kauã Francino dos Santos Lima</span></h1>
-                <p>Desenvolvedor Web | Designer | Criador</p>
-                <div class="hero-buttons">
-                    <a href="./projects.html" class="btn">Ver Meus Projetos</a>
-                    <a href="./about.html" class="btn">Saiba Mais</a>
-                </div>
-            </div>
-        </section>
-        <section class="about">
-            <h2>Minha Trajetória</h2>
-            <p>Desejo melhorar comigo mesmo nessa carreira como um programador. Estou fazendo curso de desenvolvimento de sistemas no Senac (conclusão em 07/2025) e técnico para internet no Senai (conclusão em 08/2025). Quero me aprimorar rapidamente para entrar no mercado de trabalho e ter uma experiência positiva em minha carreira profissional.</p>
-        </section>
-    </main>
-    <footer>
-        <div class="social-media">
-            <a href="https://www.linkedin.com/in/kaua-francino-85b154183/" target="_blank"><img src="./images/linkedin.png" alt="LinkedIn"></a>
-            <a href="https://github.com/Nosferatzod" target="_blank"><img src="./images/github.png" alt="GitHub"></a>
-        </div>
-        <p>&copy; 2024 Kauã Francino dos Santos Lima. Todos os direitos reservados.</p>
-    </footer>
-    <script src="./js/scripts.js"></script>
+<html lang="pt-br">
 
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="./static/images/forca.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Forca - Teste seus conhecimentos em TI</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+</head>
+
+<body>
+    <video id="background-video" autoplay muted loop>
+        <source src="./static/video/steam01.mp4" type="video/mp4">
+    </video>
+    
+    <header>
+        <div class="container">
+            <img src="./static/images/senai.png" alt="SENAI Logo" class="img-fluid senai-Logo">
+        </div>
+    </header>
+
+    <main class="container mt-4">
+        <section>
+            <h2>"Telecomunicações no Desenvolvimento do Brasil" </h2>
+            <p>É um estudo que detalha a importância das telecomunicações no crescimento econômico e social do país. O livro explora desde a história das telecomunicações no Brasil, passando pela evolução das políticas públicas e privatizações, até os impactos diretos na economia e na inclusão social. Destaca como a expansão das telecomunicações ajudou a integrar mercados, modernizar setores produtivos e atrair investimentos, além de melhorar o acesso à educação e saúde e reduzir desigualdades regionais. Também aborda os desafios do setor, como a necessidade de infraestrutura e regulação eficaz, e as oportunidades trazidas pela inovação tecnológica.</p>
+        </section>
+        <h1 class="mt-5">Jogo da forca sobre Tele Comunicações!</h1>
+        <p>Clique no botão abaixo para jogar:</p>
+        </section>
+
+        <h1 class="mt-5">Teste seus conhecimentos em TI no nosso JOGO DA FORCA!</h1>
+        <p>Clique no botão abaixo para jogar:</p>
+        <a href="./pages/forca.html" class="btn btn-primary btn-lg btn-play">Jogar Agora</a>
+    </main>
+
+    <footer>
+        <div class="container text-center">
+            <p>Aplicação WEB Desenvolvida por LENON YURI, Instrutor de Informática.</p>
+        </div>
+    </footer>
 </body>
+
 </html>

@@ -1,0 +1,205 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    position: relative; /* Para garantir que o vídeo fique atrás do conteúdo */
+}
+
+#background-video {
+    position: fixed; /* Fica fixo na tela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz o vídeo cobrir a área sem distorcer */
+    z-index: -1; /* Coloca o vídeo atrás do conteúdo */
+}
+
+.container {
+    background-color: #ffffff42;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 90%;
+    width: 45%;
+    margin: 20px auto;
+    box-sizing: border-box;
+    position: relative; /* Garante que o conteúdo fique acima do vídeo */
+    z-index: 1; /* Garante que o conteúdo fique acima do vídeo */
+}
+
+/* Restante do seu CSS... */
+
+
+#dica {
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+
+#palavra { 
+    color: #343a40;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+#guess {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.botoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px; 
+    border-radius: 4px; 
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    flex: 1 1 150px; 
+    max-width: 200px;
+}
+
+.btn-primary {
+    background-color: #ffa600e7; 
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #dd9000e7;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover { 
+    background-color: #5a6268;
+}
+
+/* Espaçamento para status e Letras tentadas */
+#status,
+#attempts {
+    font-size: 1.1em;
+    color: #495057;
+    margin-top: 20px;
+}
+
+#forca {
+    width: 150px;
+    height: 250px;
+    margin: 20px auto;
+    position: relative;
+}
+
+#forca div {
+    background-color: blue; 
+    position: absolute;
+}
+
+footer {
+    background-color: #00c3ff80;
+    color: #fff;
+    padding: 15px 0;
+    font-size: 18px;
+    text-align: center;
+    margin-top: auto;
+    line-height: 1.6; 
+    width: 100%;
+}
+
+header {
+    background-color: #00c3ff80; 
+    color: #fff;
+    padding: 15px 0;
+    text-align: center; 
+    margin-bottom: 20px;
+}
+
+img.senai-logo {
+    max-width: 20%; 
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.display-4 {
+    font-size: 2.5rem; /* Tamanho da fonte para telas maiores */
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+/* Media Queries para telas menores */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .btn {
+        flex: 1 1 100%; /* Botões ocupam toda a Largura disponível */ 
+        max-width: none; /* Remove a Largura máxima */
+        margin-bottom: 10px; /* Espaçamento inferior entre botões empilhados */
+    }
+
+    #forca {
+        width: 120px; 
+        height: 200px;
+    }
+
+    footer,
+    header {
+        padding: 10px 0;
+        font-size: 16px;
+    }
+
+    img.senai-logo {
+        max-width: 30%;
+    }
+
+    .display-4 {
+        font-size: 2rem; /* Ajuste para tablets e dispositivos intermediários */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    #forca {
+        width: 100px; 
+        height: 180px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    footer,
+    header {
+        font-size: 14px;
+    }
+
+    img.senai-logo {
+        max-width: 40%;
+    }
+
+    .display-4 {
+        font-size: 1.5rem; /* Ajuste para dispositivos móveis */
+    }
+}

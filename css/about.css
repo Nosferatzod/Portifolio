@@ -85,10 +85,6 @@ nav ul li a:hover, nav ul li a.active {
     margin-bottom: 0.5rem;
 }
 
-.hero h1 span {
-    color: #6c5478;
-}
-
 .hero p {
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
@@ -148,6 +144,7 @@ footer .social-media img {
     height: 24px;
     vertical-align: middle;
 }
+
 .skills-container {
     display: flex;
     flex-wrap: wrap;
@@ -171,6 +168,35 @@ footer .social-media img {
 .skill-card:hover {
     transform: scale(1.05);
     background-color: #6c5478;
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Muda direção do header para coluna */
+        align-items: flex-start; /* Alinha itens ao início */
+    }
+
+    .hero {
+        padding: 2rem 0; /* Reduz padding em telas menores */
+    }
+
+    .hero-content {
+        max-width: 90%; /* Aumenta a largura em telas menores */
+        padding: 1.5rem; /* Ajusta padding */
+    }
+
+    .about {
+        padding: 1rem; /* Ajusta padding */
+    }
+
+    .skills-container {
+        gap: 0.5rem; /* Reduz o gap entre as habilidades */
+    }
+
+    .skill-card {
+        font-size: 0.9rem; /* Diminui a fonte em telas menores */
+    }
 }
 
 body {

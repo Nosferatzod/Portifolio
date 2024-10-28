@@ -171,31 +171,26 @@ footer .social-media img {
 }
 
 /* Media Queries para responsividade */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column; /* Muda direção do header para coluna */
-        align-items: flex-start; /* Alinha itens ao início */
-    }
-
-    .hero {
-        padding: 2rem 0; /* Reduz padding em telas menores */
-    }
-
+@media (max-width: 1023px) {
     .hero-content {
-        max-width: 90%; /* Aumenta a largura em telas menores */
-        padding: 1.5rem; /* Ajusta padding */
+        display: flex;
+        flex-direction: column; /* Imagem acima do texto em telas pequenas */
+        align-items: center; /* Centralizando o conteúdo */
+    }
+
+    .hero-content .avatar {
+        margin: 0 0 20px; /* Ajuste do espaçamento em volta da imagem */
     }
 
     .about {
-        padding: 1rem; /* Ajusta padding */
+        padding: 1rem; /* Ajuste do padding para telas pequenas */
+        margin: 1rem auto; /* Margem reduzida */
     }
+}
 
-    .skills-container {
-        gap: 0.5rem; /* Reduz o gap entre as habilidades */
-    }
-
-    .skill-card {
-        font-size: 0.9rem; /* Diminui a fonte em telas menores */
+@media (max-width: 1200px) {
+    .hero-content {
+        flex-direction: column; /* Inverte a ordem dos elementos */
     }
 }
 
@@ -230,3 +225,42 @@ body {
       background-position: 40px 40px;
     }
   }
+
+/* Ocultar o menu em telas pequenas e adicionar transição suave */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    /* Mostrar o botão de menu */
+    .menu-toggle {
+        display: block;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        color: #ffffff;
+        cursor: pointer;
+    }
+
+    /* Exibir o menu quando ativo e empurrar o conteúdo para baixo */
+    .nav-active nav ul {
+        display: flex;
+        animation: slideDown 0.3s ease-in-out;
+    }
+}
+
+/* Animação para deslizar o menu para baixo */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

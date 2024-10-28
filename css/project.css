@@ -110,36 +110,28 @@ footer .social-media img {
 }
 
 /* Media Queries para responsividade */
-@media (max-width: 1024px) {
-    header {
-        flex-direction: column; /* Altera a direção para coluna em telas pequenas */
-        align-items: flex-start; /* Alinha os itens ao início */
-    }
-    
-    nav ul {
-        flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
-        justify-content: flex-start; /* Justifica ao início */
+@media (max-width: 1023px) {
+    .hero-content {
+        display: flex;
+        flex-direction: column; /* Imagem acima do texto em telas pequenas */
+        align-items: center; /* Centralizando o conteúdo */
     }
 
-    main {
-        padding: 1rem; /* Diminui o padding em telas menores */
+    .hero-content .avatar {
+        margin: 0 0 20px; /* Ajuste do espaçamento em volta da imagem */
     }
 
-    .projects-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajusta as colunas */
+    .about {
+        padding: 1rem; /* Ajuste do padding para telas pequenas */
+        margin: 1rem auto; /* Margem reduzida */
     }
 }
 
-@media (max-width: 600px) {
-    header {
-        align-items: center; /* Centraliza em telas menores */
-    }
-
-    .portfolio {
-        padding: 0 1rem; /* Adiciona padding lateral */
+@media (max-width: 1200px) {
+    .hero-content {
+        flex-direction: column; /* Inverte a ordem dos elementos */
     }
 }
-
 body {
     width: 100%;
     height: 100%;
@@ -171,3 +163,43 @@ body {
       background-position: 40px 40px;
     }
   }
+  /* Esconder o menu completo em telas menores */
+/* Ocultar o menu em telas pequenas e adicionar transição suave */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    /* Mostrar o botão de menu */
+    .menu-toggle {
+        display: block;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        color: #ffffff;
+        cursor: pointer;
+    }
+
+    /* Exibir o menu quando ativo e empurrar o conteúdo para baixo */
+    .nav-active nav ul {
+        display: flex;
+        animation: slideDown 0.3s ease-in-out;
+    }
+}
+
+/* Animação para deslizar o menu para baixo */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+

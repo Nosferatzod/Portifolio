@@ -161,3 +161,42 @@ body {
       background-position: 40px 40px;
     }
 }
+
+/* Ocultar o menu em telas pequenas e adicionar transição suave */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    /* Mostrar o botão de menu */
+    .menu-toggle {
+        display: block;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        color: #ffffff;
+        cursor: pointer;
+    }
+
+    /* Exibir o menu quando ativo e empurrar o conteúdo para baixo */
+    .nav-active nav ul {
+        display: flex;
+        animation: slideDown 0.3s ease-in-out;
+    }
+}
+
+/* Animação para deslizar o menu para baixo */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

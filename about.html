@@ -9,19 +9,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="./images/logo.png" alt="Logo">
+    <header class="header">
+        <div class="logo-container">
+            <img class="small-logo" src="./images/logo.png" alt="Logo">
         </div>
-        <nav>
-            <ul>
-                <li><a href="./index.html" >Home</a></li>
-                <li><a href="./projects.html">Projetos</a></li>
-                <li><a href="./about.html" class="active">Sobre Mim</a></li>
-                <li><a href="./contact.html">Contato</a></li>
-            </ul>
-        </nav>
-        <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+        <div class="container">
+            <button class="navbar-toggler" id="toggleButton" aria-label="Toggle navigation">
+                <span class="hamburguer"></span>
+                <span class="hamburguer"></span>
+                <span class="hamburguer"></span>
+            </button>
+            <nav class="navbar" id="navbarNav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="/index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="./projects.html" class="nav-link">Projetos</a></li>
+                    <li class="nav-item"><a href="./about.html" class="nav-link active">Sobre mim</a></li>
+                    <li class="nav-item"><a href="./contact.html" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main class="container">
         <section class="hero">

@@ -18,6 +18,8 @@ header .logo img {
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #ffffff;
+    background: url('../images/fundo.png') no-repeat center center fixed;
+    background-size: cover; /* Garante que a imagem cubra toda a tela */
     background-color: #1b0124; 
     margin: 0;
     overflow-x: hidden;
@@ -32,7 +34,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(14, 14, 14, 0.8);
+    background-color: #030112c9;
     text-align: center;
     padding: 1.4rem 2rem;
     width: 100%;
@@ -63,7 +65,7 @@ header {
 }
 
 .nav-link:hover {
-    color: #aa00ff;
+    color: rgb(255, 140, 140);
 }
 /* Logo pequena */
 .logo-container {
@@ -79,7 +81,7 @@ header {
 }
 
 .hero {
-    background-image: url('./images/background.jpg'); /* Adicione uma imagem de fundo sutil */
+    /*background-image: url('../images/plano_fundo.pn'); /* Adicione uma imagem de fundo sutil */
     background-size: cover;
     background-position: center;
     padding: 4rem 0;
@@ -89,7 +91,7 @@ header {
 }
 
 .hero-content {
-    background-color: #1f242f;
+    background-color: #030112c9;
     display: inline-block;
     padding: 2rem;
     border-radius: 8px;
@@ -100,7 +102,7 @@ header {
     width: 150px; /* Ajuste o tamanho conforme necessário */
     height: 150px; /* Garante que a imagem seja quadrada */
     border-radius: 50%; /* Torna a imagem redonda */
-    border: 5px solid #4b0076; /* Borda */
+    border: 5px solid rgb(255, 140, 140, 0.5); /* Borda */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
     object-fit: cover; /* Garante que a imagem preencha o círculo */
     margin: 20px; /* Espaçamento em volta da imagem */
@@ -118,7 +120,7 @@ header {
 }
 
 .hero h1 span {
-    color: #6c5478;
+    color: rgb(255, 140, 140, 0.8);
 }
 
 .hero p {
@@ -130,7 +132,7 @@ header {
     display: inline-block;
     padding: 0.75rem 2rem;
     margin: 0.5rem;
-    background-color: #6c5478;
+    background-color: rgb(255, 140, 140, 0.6);
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -138,13 +140,13 @@ header {
 }
 
 .hero-buttons .btn:hover {
-    background-color: #2f1639;
+    background-color: rgba(255, 140, 140, 0.349);
     transform: scale(1.05);
 }
 
 .about {
     padding: 2rem 4rem;
-    background-color: #6c5478b4;
+    background-color: #030112c9;
     border-radius: 8px;
     margin: 2rem auto;
     max-width: 800px;
@@ -157,13 +159,13 @@ header {
 }
 
 footer {
-    background-color: #3333339f;
-    padding: 1rem;
+    top: 30px;
+    background-color: #030112c9;
+    padding: 20px;
     text-align: center;
-    color: #ffffff;
     position: relative;
-    bottom: 0;
     width: 100%;
+    color: #ffffff;
 }
 
 footer .social-media a {
@@ -173,7 +175,7 @@ footer .social-media a {
 }
 
 footer .social-media a:hover {
-    color: #2f1639;
+    color: #2d00bf;
 }
 
 footer .social-media img {
@@ -189,27 +191,15 @@ footer .social-media img {
     }
 }
 body {
-    width: 100%;
-    height: 100%;
-    --s: 200px; /* control the size */
-    --c1: #1d1d1d;
-    --c2: #4e4f51;
-    --c3: #3c3c3c;
-  
-    background: repeating-conic-gradient(
-          from 30deg,
-          #0000 0 120deg,
-          var(--c3) 0 180deg
-        )
-        calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577),
-      repeating-conic-gradient(
-        from 30deg,
-        var(--c1) 0 60deg,
-        var(--c2) 0 120deg,
-        var(--c3) 0 180deg
-      );
-    background-size: var(--s) calc(var(--s) * 0.577);
-  }
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    background: url('../images/fundo.png') no-repeat center center fixed;
+    background-size: cover; /* Garante que a imagem cubra toda a tela */
+    background-color: #1b0124; 
+    margin: 0;
+    overflow-x: hidden;
+    /* Evita rolagem horizontal */
+}
   
   @keyframes move {
     0% {
@@ -238,7 +228,7 @@ body {
     /* Aumentar a largura */
     height: 4px;
     /* Aumentar a altura */
-    background-color: #4a5568;
+    background-color: #030112c9;
     margin: 6px 0;
     /* Aumentar a margem entre os elementos do botão */
     border-radius: 2px;
@@ -280,7 +270,7 @@ body {
     position: absolute;
     right: 10px;
     top: 15px;
-    background-color: rgba(14, 14, 14, 0.8); /* cor vibrante */
+    background-color: #595191; /* cor vibrante */
     color: #ffffff;
     font-size: 24px;
     padding: 10px;
@@ -290,12 +280,12 @@ body {
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 .navbar-toggler:hover {
-    background-color: #5816adc4; /* cor ao passar o mouse */
+    background-color: #8E89BC; /* cor ao passar o mouse */
     transform: scale(1.1); /* aumenta ligeiramente no hover */
 }
 
 .navbar-toggler:active {
-    background-color: #7811ffc4; /* cor ao clicar */
+    background-color: #302867; /* cor ao clicar */
     transform: scale(1);
 }
 
@@ -309,9 +299,9 @@ body {
         left: 0;
         width: 100%;
         /* Largura total */
-        background-color: rgba(14, 14, 14, 0.8);
+        background-color: #030112c9;
         /* Fundo branco */
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 10px rgba(245, 10, 10, 0.1);
         z-index: 9;
     }
 
@@ -405,7 +395,7 @@ body {
     }
 
     .nav-link {
-        color: #4a5568;
+        color: #8E89BC;
         /* Cor padrão dos links */
         text-decoration: none;
         /* Remove sublinhado */
@@ -414,7 +404,8 @@ body {
     }
 
     .nav-link:hover {
-        color: #aa00ff;
+        transition: 0.4s;
+        color: rgb(255, 140, 140, 0.8);
         /* Cor ao passar o mouse */
     }
 }
@@ -513,7 +504,7 @@ body {
 
 /* Rodapé */
 .footer {
-    background-color: #333;
+    background-color: #030112c9;
     color: #fff;
     padding: 40px 20px;
     text-align: center;

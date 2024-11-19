@@ -37,7 +37,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(14, 14, 14, 0.8);
+    background-color: #030112c9;
     text-align: center;
     padding: 1.4rem 2rem;
     width: 100%;
@@ -68,7 +68,7 @@ header {
 }
 
 .nav-link:hover {
-    color: #aa00ff;
+    color: rgb(255, 140, 140);
 }
 /* Logo pequena */
 .logo-container {
@@ -87,7 +87,7 @@ header {
 }
 
 .hero-content {
-    background-color: rgba(31, 36, 47, 0.9);
+    background-color: #030112e0;
     display: inline-block;
     padding: 2rem;
     border-radius: 8px;
@@ -99,7 +99,7 @@ header {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 5px solid #4b0076;
+    border: 5px solid rgb(255, 140, 140, 0.5);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     object-fit: cover;
     margin: 20px;
@@ -139,7 +139,7 @@ header {
 
 .about {
     padding: 2rem 4rem;
-    background-color: #6c5478ce;
+    background-color: #030112c9;
     border-radius: 8px;
     margin: 2rem auto;
     max-width: 800px;
@@ -153,7 +153,7 @@ header {
 }
 
 footer {
-    background-color: #333333a2;
+    background-color: #030112c9;
     padding: 1rem;
     text-align: center;
     color: #ffffff;
@@ -207,27 +207,15 @@ footer .social-media img {
     }
 }
 body {
-    width: 100%;
-    height: 100%;
-    --s: 200px; /* control the size */
-    --c1: #1d1d1d;
-    --c2: #4e4f51;
-    --c3: #3c3c3c;
-  
-    background: repeating-conic-gradient(
-          from 30deg,
-          #0000 0 120deg,
-          var(--c3) 0 180deg
-        )
-        calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577),
-      repeating-conic-gradient(
-        from 30deg,
-        var(--c1) 0 60deg,
-        var(--c2) 0 120deg,
-        var(--c3) 0 180deg
-      );
-    background-size: var(--s) calc(var(--s) * 0.577);
-  }
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    background: url('../images/fundo.png') no-repeat center center fixed;
+    background-size: cover; /* Garante que a imagem cubra toda a tela */
+    background-color: #1b0124; 
+    margin: 0;
+    overflow-x: hidden;
+    /* Evita rolagem horizontal */
+}
   
   @keyframes move {
     0% {
@@ -298,7 +286,7 @@ body {
     position: absolute;
     right: 10px;
     top: 15px;
-    background-color: rgba(14, 14, 14, 0.8); /* cor vibrante */
+    background-color: #8E89BC; /* cor vibrante */
     color: #ffffff;
     font-size: 24px;
     padding: 10px;
@@ -308,30 +296,30 @@ body {
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 .navbar-toggler:hover {
-    background-color: #5816adc4; /* cor ao passar o mouse */
+    background-color: #302867a4; /* cor ao passar o mouse */
     transform: scale(1.1); /* aumenta ligeiramente no hover */
 }
 
 .navbar-toggler:active {
-    background-color: #7811ffc4; /* cor ao clicar */
+    background-color: #302867; /* cor ao clicar */
     transform: scale(1);
 }
 
-    .nav-list {
-        display: none;
-        /* Oculte a lista inicialmente */
-        flex-direction: column;
-        /* Alinha em coluna */
-        position: absolute;
-        top: 80px;
-        left: 0;
-        width: 100%;
-        /* Largura total */
-        background-color: rgba(14, 14, 14, 0.8);
-        /* Fundo branco */
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        z-index: 9;
-    }
+.nav-list {
+    display: none;
+    /* Oculte a lista inicialmente */
+    flex-direction: column;
+    /* Alinha em coluna */
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    /* Largura total */
+    background-color: #030112c9;
+    /* Fundo branco */
+    box-shadow: 0 2px 10px rgba(245, 10, 10, 0.1);
+    z-index: 9;
+}
 
     .navbar.active .nav-list {
         display: flex;
@@ -423,7 +411,7 @@ body {
     }
 
     .nav-link {
-        color: #4a5568;
+        color: #8E89BC;
         /* Cor padrão dos links */
         text-decoration: none;
         /* Remove sublinhado */
@@ -432,7 +420,8 @@ body {
     }
 
     .nav-link:hover {
-        color: #aa00ff;
+        transition: 0.4s;
+        color: rgb(255, 140, 140, 0.8);
         /* Cor ao passar o mouse */
     }
 }

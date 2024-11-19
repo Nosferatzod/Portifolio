@@ -125,7 +125,7 @@ header {
     display: inline-block;
     padding: 0.75rem 2rem;
     margin: 0.5rem;
-    background-color: #6c5478;
+    background-color: rgb(255, 140, 140, 0.6);
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -133,7 +133,7 @@ header {
 }
 
 .hero-buttons .btn:hover {
-    background-color: #2f1639;
+    background-color: rgba(255, 140, 140, 0.404);
     transform: scale(1.05);
 }
 
@@ -167,7 +167,7 @@ footer .social-media a {
 }
 
 footer .social-media a:hover {
-    color: #aa00ff;
+    color: rgb(255, 140, 140, 0.6);
 }
 
 footer .social-media img {
@@ -185,7 +185,7 @@ footer .social-media img {
 }
 
 .skill-card {
-    background-color: #2f1639;
+    background-color: rgb(255, 140, 140, 0.6);
     color: #ffffff;
     padding: 0.75rem 1.5rem;
     border-radius: 5px;
@@ -198,7 +198,7 @@ footer .social-media img {
 
 .skill-card:hover {
     transform: scale(1.05);
-    background-color: #6c5478;
+    background-color: rgba(255, 140, 140, 0.404);
 }
 
 @media (max-width: 1200px) {

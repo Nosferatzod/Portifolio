@@ -412,7 +412,6 @@ body {
 
 
 .banner {
-    background-image: url('../images/banner.png');
     background-size: cover;
     background-position: center;
     padding: 150px 0;

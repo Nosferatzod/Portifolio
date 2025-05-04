@@ -4,116 +4,264 @@
     <link rel="icon" href="./images/lirio-aranha.png" type="image/png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projetos - Meu Portfólio</title>
+    <title>Projetos - Portfólio Link Click Style</title>
     <link rel="stylesheet" href="./css/project.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
+    <!-- Efeito de transição entre páginas -->
+    <div class="page-transition">
+        <div class="transition-line"></div>
+    </div>
+
     <header class="header">
         <div class="logo-container">
             <img class="small-logo" src="./images/lirio_icon.png" alt="Logo">
         </div>
-        <div class="container">
-            <button class="navbar-toggler" id="toggleButton" aria-label="Toggle navigation">
-                <span class="hamburguer"></span>
-                <span class="hamburguer"></span>
-                <span class="hamburguer"></span>
-            </button>
-            <nav class="navbar" id="navbarNav">
-                <ul class="nav-list">
-                    <li class="nav-item"><a href="./index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="./projects.html" class="nav-link active">Projetos</a></li>
-                    <li class="nav-item"><a href="./about.html" class="nav-link">Sobre mim</a></li>
-                    <li class="nav-item"><a href="./contact.html" class="nav-link">Contato</a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="./index.html" class="nav-link" data-transition="home">Home</a></li>
+                <li class="nav-item"><a href="./projects.html" class="nav-link active" data-transition="projects">Projetos</a></li>
+                <li class="nav-item"><a href="./about.html" class="nav-link" data-transition="about">Sobre mim</a></li>
+                <li class="nav-item"><a href="./contact.html" class="nav-link" data-transition="contact">Contato</a></li>
+            </ul>
+            <div class="nav-indicator"></div>
+        </nav>
+        <button class="navbar-toggler" id="toggleButton" aria-label="Toggle navigation">
+            <span class="hamburguer"></span>
+            <span class="hamburguer"></span>
+            <span class="hamburguer"></span>
+        </button>
     </header>
+
     <main class="container">
-        <section class="portfolio">
-            <h1>Projetos</h1>
+        <section class="portfolio animate__animated animate__fadeIn">
+            <h1 class="portfolio-title"><span class="text-gradient">Meus Projetos</span></h1>
             <div class="projects-grid">
-                <div class="project" onclick="showProject('project1')">
-                    <a href="https://nosferatzod.github.io/2048_game/" target="_blank"><img class="tokyo" src="./images/2048.gif" alt="Tokyo Ghoul"></a>
-                    <h2>2048 Game</h2>
+                <!-- Projeto 1 -->
+                <div class="project-card" data-category="web">
+                    <a href="https://nosferatzod.github.io/chain_saw_wiki/" target="_blank" class="project-link">
+                        <div class="project-image-container">
+                            <img src="./images/aki.gif" alt="Lycoris Radiata" class="project-image">
+                            <div class="project-overlay">
+                                <span class="view-text">Ver Projeto</span>
+                            </div>
+                        </div>
+                        <h3 class="project-title">ChainSaw man Wiki</h3>
+                    </a>
                 </div>
-                <div class="project" onclick="showProject('project1')">
-                    <a href="https://nosferatzod.github.io/chain_saw_wiki/" target="_blank"><img class="tokyo" src="./images/aki.gif" alt="Tokyo Ghoul"></a>
-                    <h2>ChainSaw Man Wiki</h2>
+                <div class="project-card" data-category="web">
+                    <a href="https://nosferatzod.github.io/2048_game/" target="_blank" class="project-link">
+                        <div class="project-image-container">
+                            <img src="./images/2048.gif" alt="2048 Game" class="project-image">
+                            <div class="project-overlay">
+                                <span class="view-text">Ver Projeto</span>
+                            </div>
+                        </div>
+                        <h3 class="project-title">2048 Game</h3>
+                    </a>
                 </div>
-                <div class="project" onclick="showProject('project1')">
-                    <a href="https://va-11hall-a-drinks-37x4zg4xx-nosferatzods-projects.vercel.app/" target="_blank"><img class="tokyo" src="./images/vahalla.png" alt="vahalla"></a>
-                    <h2>Va-11hall-a Drinks</h2>
+
+                <!-- Projeto 2 -->
+                <div class="project-card" data-category="web">
+                    <a href="https://nosferatzod.github.io/bee_vibe/" target="_blank" class="project-link">
+                        <div class="project-image-container">
+                            <img src="./images/icon.webp" alt="BeeVibe" class="project-image">
+                            <div class="project-overlay">
+                                <span class="view-text">Ver Projeto</span>
+                            </div>
+                        </div>
+                        <h3 class="project-title">BeeVibe</h3>
+                    </a>
                 </div>
-                <div class="project" onclick="showProject('project1')">
-                    <a href="https://nosferatzod.github.io/bee_vibe/" target="_blank"><img class="tokyo" src="./images/icon.webp" alt="BeeVibe"></a>
-                    <h2>BeeVibe</h2>
+
+                <div class="project-card" data-category="web">
+                    <a href="https://nosferatzod.github.io/gerador_ascii/" target="_blank" class="project-link">
+                        <div class="project-image-container">
+                            <img src="./images/ken_ascii.png" alt="Tokyo Ghoul" class="project-image">
+                            <div class="project-overlay">
+                                <span class="view-text">Ver Projeto</span>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Gerador ASCII</h3>
+                    </a>
                 </div>
-                <div class="project" onclick="showProject('project1')">
-                    <a href="https://nosferatzod.github.io/gerador_ascii/" target="_blank"><img class="tokyo" src="./images/ken_ascii.png" alt="Tokyo Ghoul"></a>
-                    <h2>Gerador ASCII</h2>
+
+                <!-- Projeto 3 -->
+                <div class="project-card" data-category="web">
+                    <a href="https://nosferatzod.github.io/Tokyo-Ghoul/" target="_blank" class="project-link">
+                        <div class="project-image-container">
+                            <img src="./images/lirio-aranha.png" alt="Tokyo Ghoul" class="project-image">
+                            <div class="project-overlay">
+                                <span class="view-text">Ver Projeto</span>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Tokyo Ghoul</h3>
+                    </a>
                 </div>
-                <div class="project" onclick="showProject('project1')">
-                    <a href="https://nosferatzod.github.io/Tokyo-Ghoul/" target="_blank"><img class="tokyo" src="./images/lirio-aranha.png" alt="Tokyo Ghoul"></a>
-                    <h2>Tokyo Ghoul</h2>
+
+                <div class="project-card" data-category="web">
+                    <a href="https://nosferatzod.github.io/gerador_de_senhas/" target="_blank" class="project-link">
+                        <div class="project-image-container">
+                            <img src="./images/chave.gif" alt="Gerador de Senha" class="project-image">
+                            <div class="project-overlay">
+                                <span class="view-text">Ver Projeto</span>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Gerador de Senha</h3>
+                    </a>
                 </div>
-                <div class="project" onclick="showProject('project2')">
-                    <a href="https://nosferatzod.github.io/Aston-Martin/" target="_blank"><img class="aston" src="./images/logo2.png" alt="Aston-Martin"></a>
-                    <h2>Aston-Martin</h2>
+
+                <!-- Projeto 6 -->
+                <div class="project-card" data-category="web">
+                    <a href="https://nosferatzod.github.io/jogo_velho/" target="_blank" class="project-link">
+                        <div class="project-image-container">
+                            <img src="./images/jogo-da-velha.gif" alt="Jogo da Velha" class="project-image">
+                            <div class="project-overlay">
+                                <span class="view-text">Ver Projeto</span>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Jogo da Velha</h3>
+                    </a>
                 </div>
-                <div class="project" onclick="showProject('project3')">
-                    <a href="https://nosferatzod.github.io/gerador_de_senhas/" target="_blank"><img class="aston" src="./images/chave.gif" alt="Gerador de Senha"></a>
-                    <h2>Gerador de Senha</h2>
+
+                <!-- Projeto 7 -->
+                <div class="project-card" data-category="web">
+                    <a href="https://nosferatzod.github.io/edge_solver/" target="_blank" class="project-link">
+                        <div class="project-image-container">
+                            <img src="./images/logo_cyber.png" alt="Edge Solver" class="project-image">
+                            <div class="project-overlay">
+                                <span class="view-text">Ver Projeto</span>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Edge Solver</h3>
+                    </a>
                 </div>
-                <div class="project" onclick="showProject('project4')">
-                    <a href="https://nosferatzod.github.io/jogo_velho/" target="_blank"><img class="aston" src="./images/jogo-da-velha.gif" alt="jogo-da-velha"></a>
-                    <h2>Jogo da Velha</h2>
+
+                <!-- Projeto 8 -->
+                <div class="project-card" data-category="web">
+                    <a href="https://nosferatzod.github.io/jogo_forca/" target="_blank" class="project-link">
+                        <div class="project-image-container">
+                            <img src="./images/steam.gif" alt="Jogo da Forca" class="project-image">
+                            <div class="project-overlay">
+                                <span class="view-text">Ver Projeto</span>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Jogo da Forca</h3>
+                    </a>
                 </div>
-                <div class="project" onclick="showProject('project1')">
-                    <a href="https://nosferatzod.github.io/edge_solver/" target="_blank"><img class="tokyo" src="./images/logo_cyber.png" alt="edge_solver"></a>
-                    <h2>Edge Solver</h2>
+
+                <!-- Projeto 9 -->
+                <div class="project-card" data-category="web">
+                    <a href="https://nosferatzod.github.io/star_wars/" target="_blank" class="project-link">
+                        <div class="project-image-container">
+                            <img src="./images/star.svg" alt="Star Wars" class="project-image">
+                            <div class="project-overlay">
+                                <span class="view-text">Ver Projeto</span>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Star Wars</h3>
+                    </a>
                 </div>
-                <div class="project" onclick="showProject('project5')">
-                    <a href="https://nosferatzod.github.io/jogo_forca/" target="_blank"><img class="tokyo" src="./images/steam.gif" alt="Jogo da Forca"></a>
-                    <h2>Jogo da Forca</h2>
+
+                <!-- Projeto 10 -->
+                <div class="project-card" data-category="web">
+                    <a href="https://nosferatzod.github.io/elden_ring/" target="_blank" class="project-link">
+                        <div class="project-image-container">
+                            <img src="./images/icon.ico" alt="Elden Ring" class="project-image">
+                            <div class="project-overlay">
+                                <span class="view-text">Ver Projeto</span>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Elden Ring</h3>
+                    </a>
                 </div>
-                <div class="project" onclick="showProject('project6')">
-                    <a href="https://nosferatzod.github.io/star_wars/" target="_blank"><img class="tokyo" src="./images/star.svg" alt="Star Wars"></a>
-                    <h2>Star Wars</h2>
+
+                <!-- Projeto 11 -->
+                <div class="project-card" data-category="web">
+                    <a href="https://nosferatzod.github.io/Scrum-jogo-semana-da-biblioteca-2024/" target="_blank" class="project-link">
+                        <div class="project-image-container">
+                            <img src="./images/livro.gif" alt="Biblioteca" class="project-image">
+                            <div class="project-overlay">
+                                <span class="view-text">Ver Projeto</span>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Biblioteca</h3>
+                    </a>
                 </div>
-                <div class="project" onclick="showProject('project7')">
-                    <a href="https://nosferatzod.github.io/elden_ring/" target="_blank"><img class="tokyo" src="./images/icon.ico" alt="Elden Ring"></a>
-                    <h2>Elden Ring</h2>
+
+                <!-- Projeto 12 -->
+                <div class="project-card" data-category="web">
+                    <a href="https://nosferatzod.github.io/photo_fusion/" target="_blank" class="project-link">
+                        <div class="project-image-container">
+                            <img src="./images/photo.jpg" alt="PhotoFusion" class="project-image">
+                            <div class="project-overlay">
+                                <span class="view-text">Ver Projeto</span>
+                            </div>
+                        </div>
+                        <h3 class="project-title">PhotoFusion</h3>
+                    </a>
                 </div>
-                <div class="project" onclick="showProject('project7')">
-                    <a href="https://nosferatzod.github.io/Scrum-jogo-semana-da-biblioteca-2024/" target="_blank"><img class="tokyo" src="./images/livro.gif" alt="Biblioteca"></a>
-                    <h2>Biblioteca</h2>
+
+                <!-- Projeto 13 -->
+                <div class="project-card" data-category="web">
+                    <a href="https://nosferatzod.github.io/white_silence/" target="_blank" class="project-link">
+                        <div class="project-image-container">
+                            <img src="./images/icon.png" alt="White Silence" class="project-image">
+                            <div class="project-overlay">
+                                <span class="view-text">Ver Projeto</span>
+                            </div>
+                        </div>
+                        <h3 class="project-title">White Silence</h3>
+                    </a>
                 </div>
-                <div class="project" onclick="showProject('project7')">
-                    <a href="https://nosferatzod.github.io/photo_fusion/" target="_blank"><img class="tokyo" src="./images/photo.jpg" alt="Biblioteca"></a>
-                    <h2>PhotoFusion</h2>
+
+                <!-- Projeto 14 -->
+                <div class="project-card" data-category="web">
+                    <a href="https://nosferatzod.github.io/geek_haven/" target="_blank" class="project-link">
+                        <div class="project-image-container">
+                            <img src="./images/geek_haven.png" alt="Geek Haven" class="project-image">
+                            <div class="project-overlay">
+                                <span class="view-text">Ver Projeto</span>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Geek Haven</h3>
+                    </a>
                 </div>
-                <div class="project" onclick="showProject('project7')">
-                    <a href="https://nosferatzod.github.io/white_silence/" target="_blank"><img class="tokyo" src="./images/icon.png" alt="white_silence"></a>
-                    <h2>White Silence</h2>
-                </div>
-                <div class="project" onclick="showProject('project7')">
-                    <a href="https://nosferatzod.github.io/geek_haven/" target="_blank"><img class="tokyo" src="./images/geek_haven.png" alt="white_silence"></a>
-                    <h2>Geek Haven</h2>
-                </div>
-                <div class="project" onclick="showProject('project7')">
-                    <a href="https://jujutsu-kaisen-henna.vercel.app" target="_blank"><img class="tokyo" src="./images/sukuna.jpg" alt="white_silence"></a>
-                    <h2>Jujutsu Kaisen</h2>
+
+                <!-- Projeto 15 -->
+                <div class="project-card" data-category="web">
+                    <a href="https://jujutsu-kaisen-henna.vercel.app" target="_blank" class="project-link">
+                        <div class="project-image-container">
+                            <img src="./images/sukuna.jpg" alt="Jujutsu Kaisen" class="project-image">
+                            <div class="project-overlay">
+                                <span class="view-text">Ver Projeto</span>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Jujutsu Kaisen</h3>
+                    </a>
                 </div>
             </div>
         </section>
     </main>
-    <footer>
+
+    <footer class="footer-glow">
         <div class="social-media">
-            <a href="https://www.linkedin.com/in/kaua-francino-85b154183/" target="_blank"><img src="./images/linkedin.png" alt="LinkedIn"></a>
-            <a href="https://github.com/Nosferatzod" target="_blank"><img src="./images/github.png" alt="GitHub"></a>
+            <a href="https://www.linkedin.com/in/kaua-francino-85b154183/" target="_blank" class="social-icon">
+                <img src="./images/linkedin.png" alt="LinkedIn">
+                <span class="social-glow"></span>
+            </a>
+            <a href="https://github.com/Nosferatzod" target="_blank" class="social-icon">
+                <img src="./images/github.png" alt="GitHub">
+                <span class="social-glow"></span>
+            </a>
         </div>
-        <p>&copy; 2024 Kauã Francino dos Santos Lima. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Kauã Francino. Todos os direitos reservados.</p>
+        <div class="footer-line"></div>
     </footer>
-    <script src="./js/scripts.js" defer></script>
+
+    <script src="./js/scripts.js"></script>
+    <script src="./js/projects.js"></script>
 </body>
 </html>

@@ -4,70 +4,202 @@
     <link rel="icon" href="./images/lirio-aranha.png" type="image/png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Mim - Meu Portfólio</title>
+    <title>Sobre Mim - Portfólio Link Click Style</title>
     <link rel="stylesheet" href="./css/about.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
+    <!-- Efeito de transição entre páginas -->
+    <div class="page-transition">
+        <div class="transition-line"></div>
+    </div>
+
     <header class="header">
         <div class="logo-container">
             <img class="small-logo" src="./images/lirio_icon.png" alt="Logo">
         </div>
-        <div class="container">
-            <button class="navbar-toggler" id="toggleButton" aria-label="Toggle navigation">
-                <span class="hamburguer"></span>
-                <span class="hamburguer"></span>
-                <span class="hamburguer"></span>
-            </button>
-            <nav class="navbar" id="navbarNav">
-                <ul class="nav-list">
-                    <li class="nav-item"><a href="./index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="./projects.html" class="nav-link">Projetos</a></li>
-                    <li class="nav-item"><a href="./about.html" class="nav-link active">Sobre mim</a></li>
-                    <li class="nav-item"><a href="./contact.html" class="nav-link">Contato</a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="./index.html" class="nav-link" data-transition="home">Home</a></li>
+                <li class="nav-item"><a href="./projects.html" class="nav-link" data-transition="projects">Projetos</a></li>
+                <li class="nav-item"><a href="./about.html" class="nav-link active" data-transition="about">Sobre mim</a></li>
+                <li class="nav-item"><a href="./contact.html" class="nav-link" data-transition="contact">Contato</a></li>
+            </ul>
+            <div class="nav-indicator"></div>
+        </nav>
+        <button class="navbar-toggler" id="toggleButton" aria-label="Toggle navigation">
+            <span class="hamburguer"></span>
+            <span class="hamburguer"></span>
+            <span class="hamburguer"></span>
+        </button>
     </header>
+
     <main class="container">
-        <section class="hero">
-            <div class="hero-content">
-                <img src="./images/ken_kaneki.jpg" alt="Avatar" class="avatar">
-                <h1>Sobre Mim</h1>
-                <p>Tenho habilidades excepcionais em Python, Java, HTML e CSS. Já desenvolvi sites e aplicativos utilizando Python e Java e sou versátil no desenvolvimento de código em diversas linguagens.</p>
-                <p>Minha experiência com Python é ampla, abrangendo desde conceitos básicos até programação orientada a objetos, e continuo aprimorando meus conhecimentos. Com Java, tenho um histórico robusto em backend e na implementação de lógicas complexas em projetos anteriores.<br><br>Possuo uma base sólida em outras linguagens, como JavaScript, e tenho facilidade em me adaptar rapidamente a novas tecnologias.</p>
-                <div class="hero-buttons">
-                    <a href="#habilidades" class="btn">Ver Habilidades</a>
-                    <a href="./projects.html" class="btn">Meus Projetos</a>
+        <section class="about-section animate__animated animate__fadeIn">
+            <div class="about-header">
+                <div class="avatar-container">
+                    <img src="./images/git.png" alt="Kauã Francino" class="avatar">
+                    <div class="avatar-glow"></div>
+                </div>
+                <h1><span class="text-gradient">Kauã Francino</span></h1>
+                <p class="subtitle">Desenvolvedor Web | Designer | Criador</p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-card box-glow">
+                    <h2 class="section-title">Minha Jornada</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-point"></div>
+                            <div class="timeline-content">
+                                <h3>Formação Acadêmica</h3>
+                                <p>Curso de desenvolvimento de sistemas no Senac (conclusão em 07/2025)</p>
+                                <p>Técnico para internet no Senai (conclusão em 08/2025)</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-point"></div>
+                            <div class="timeline-content">
+                                <h3>Objetivos</h3>
+                                <p>Desejo melhorar constantemente como programador e me aprimorar rapidamente para entrar no mercado de trabalho.</p>
+                                <p>Busco uma experiência positiva em minha carreira profissional, contribuindo com projetos inovadores.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-card box-glow">
+                    <h2 class="section-title">Habilidades Técnicas</h2>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <span class="skill-name">HTML</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 95%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">CSS</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">JavaScript</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Java</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Python</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Git</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">C++</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 70%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">C</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 65%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">C#</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">MySQL</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">PHP</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 70%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">React</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Vue</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 65%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-card box-glow">
+                    <h2 class="section-title">Passion Projects</h2>
+                    <p>Além do desenvolvimento web, tenho vários projetos pessoais que refletem meus interesses e paixões:</p>
+                    
+                    <div class="passion-projects">
+                        <div class="passion-item">
+                            <div class="passion-icon">
+                                <img src="./images/aki.gif" alt="Anime Projects">
+                            </div>
+                            <h3>Projetos de Anime</h3>
+                            <p>Criação de websites temáticos inspirados em animes como Tokyo Ghoul, Jujutsu Kaisen e outros.</p>
+                        </div>
+                        <div class="passion-item">
+                            <div class="passion-icon">
+                                <img src="./images/logo_cyber.png" alt="Cyberpunk Theme">
+                            </div>
+                            <h3>Temática Cyberpunk</h3>
+                            <p>Desenvolvimento de interfaces com estética cyberpunk e futurista.</p>
+                        </div>
+                        <div class="passion-item">
+                            <div class="passion-icon">
+                                <img src="./images/icon.webp" alt="Creative Coding">
+                            </div>
+                            <h3>Creative Coding</h3>
+                            <p>Exploração de programação criativa e arte generativa.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-        <section id="habilidades" class="about">
-            <h2>Habilidades</h2>
-            <div class="skills-container">
-                <div class="skill-card">HTML</div>
-                <div class="skill-card">CSS</div>
-                <div class="skill-card">JavaScript</div>
-                <div class="skill-card">Java</div>
-                <div class="skill-card">Python</div>
-                <div class="skill-card">Git</div>
-                <div class="skill-card">C++</div>
-                <div class="skill-card">C</div>
-                <div class="skill-card">C#</div>
-                <div class="skill-card">MySQL</div>
-                <div class="skill-card">PHP</div>
-                <div class="skill-card">React</div>
-                <div class="skill-card">Vue</div>
-            </div>
-        </section>
     </main>
-    <footer>
+
+    <footer class="footer-glow">
         <div class="social-media">
-            <a href="https://www.linkedin.com/in/kaua-francino-85b154183/" target="_blank"><img src="./images/linkedin.png" alt="LinkedIn"></a>
-            <a href="https://github.com/Nosferatzod" target="_blank"><img src="./images/github.png" alt="GitHub"></a>
+            <a href="https://www.linkedin.com/in/kaua-francino-85b154183/" target="_blank" class="social-icon">
+                <img src="./images/linkedin.png" alt="LinkedIn">
+                <span class="social-glow"></span>
+            </a>
+            <a href="https://github.com/Nosferatzod" target="_blank" class="social-icon">
+                <img src="./images/github.png" alt="GitHub">
+                <span class="social-glow"></span>
+            </a>
         </div>
-        <p>&copy; 2024 Kauã Francino dos Santos Lima. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Kauã Francino. Todos os direitos reservados.</p>
+        <div class="footer-line"></div>
     </footer>
+
     <script src="./js/scripts.js"></script>
 </body>
 </html>

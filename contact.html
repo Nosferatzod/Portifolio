@@ -4,64 +4,143 @@
     <link rel="icon" href="./images/lirio-aranha.png" type="image/png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato - Meu Portfólio</title>
+    <title>Contato - Portfólio Link Click Style</title>
     <link rel="stylesheet" href="./css/contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
+    <!-- Efeito de transição entre páginas -->
+    <div class="page-transition">
+        <div class="transition-line"></div>
+    </div>
+
     <header class="header">
         <div class="logo-container">
             <img class="small-logo" src="./images/lirio_icon.png" alt="Logo">
         </div>
-        <div class="container">
-            <button class="navbar-toggler" id="toggleButton" aria-label="Toggle navigation">
-                <span class="hamburguer"></span>
-                <span class="hamburguer"></span>
-                <span class="hamburguer"></span>
-            </button>
-            <nav class="navbar" id="navbarNav">
-                <ul class="nav-list">
-                    <li class="nav-item"><a href="./index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="./projects.html" class="nav-link ">Projetos</a></li>
-                    <li class="nav-item"><a href="./about.html" class="nav-link">Sobre mim</a></li>
-                    <li class="nav-item"><a href="./contact.html" class="nav-link active">Contato</a></li>
-                </ul>
-            </nav>
-        </div>
+        <button class="navbar-toggler" id="toggleButton" aria-label="Toggle navigation">
+            <span class="hamburguer"></span>
+            <span class="hamburguer"></span>
+            <span class="hamburguer"></span>
+        </button>
+        <nav class="navbar" id="navbar">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="./index.html" class="nav-link" data-transition="home">Home</a></li>
+                <li class="nav-item"><a href="./projects.html" class="nav-link" data-transition="projects">Projetos</a></li>
+                <li class="nav-item"><a href="./about.html" class="nav-link" data-transition="about">Sobre mim</a></li>
+                <li class="nav-item"><a href="./contact.html" class="nav-link active" data-transition="contact">Contato</a></li>
+            </ul>
+            <div class="nav-indicator"></div>
+        </nav>
     </header>
 
-    <main>
-        <section class="contact">
-            <h1>Contato</h1>
-            <form id="contatoForm" action="https://formspree.io/f/xovqdvjq" method="POST">
-                <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" required aria-label="Nome">
-                
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required aria-label="E-mail">
-                
-                <label for="subject">Assunto:</label>
-                <input type="text" id="subject" name="subject" required aria-label="Assunto">
-                
-                <label for="message">Mensagem:</label>
-                <textarea id="message" name="message" required aria-label="Mensagem"></textarea>
-                
-                <button type="submit">Enviar</button>
-            </form>
+    <main class="container">
+        <section class="contact-section animate__animated animate__fadeIn">
+            <div class="contact-header">
+                <h1><span class="text-gradient">Vamos Conversar</span></h1>
+                <p class="subtitle">Entre em contato para oportunidades, colaborações ou apenas para dizer olá!</p>
+            </div>
+
+            <div class="contact-content">
+<!-- ... (cabeçalho e estrutura anterior permanecem iguais) ... -->
+
+<div class="contact-card box-glow">
+    <h2 class="section-title">Envie uma Mensagem</h2>
+    <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+        <div class="form-group">
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" required minlength="3">
+            <span class="error-message" id="name-error"></span>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <span class="error-message" id="email-error"></span>
+        </div>
+        <div class="form-group">
+            <label for="subject">Assunto</label>
+            <input type="text" id="subject" name="subject" required minlength="5">
+            <span class="error-message" id="subject-error"></span>
+        </div>
+        <div class="form-group">
+            <label for="message">Mensagem</label>
+            <textarea id="message" name="message" rows="5" required minlength="10"></textarea>
+            <span class="error-message" id="message-error"></span>
+        </div>
+        <div class="form-status" id="form-status"></div>
+        <button type="submit" class="btn btn-submit" id="submit-btn">Enviar Mensagem</button>
+    </form>
+</div>
+
+<!-- ... (restante da página permanece igual) ... -->
+
+                <div class="contact-info box-glow">
+                    <h2 class="section-title">Informações de Contato</h2>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--accent-pink)">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.31-8.86c-1.77-.45-2.34-.94-2.34-1.67 0-.84.79-1.43 2.1-1.43 1.38 0 1.9.66 1.94 1.64h1.71c-.05-1.34-.87-2.57-2.49-2.97V5H10.9v1.69c-1.51.32-2.72 1.3-2.72 2.81 0 1.79 1.49 2.69 3.66 3.21 1.95.46 2.34 1.15 2.34 1.87 0 .53-.39 1.39-2.1 1.39-1.6 0-2.23-.72-2.32-1.64H8.04c.1 1.7 1.36 2.66 2.86 2.97V19h2.34v-1.67c1.52-.29 2.72-1.16 2.73-2.77-.01-2.2-1.9-2.96-3.66-3.42z"/>
+                            </svg>
+                        </div>
+                        <div class="info-content">
+                            <h3>Email</h3>
+                            <a href="mailto:seuemail@exemplo.com">kauafrancino@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--accent-pink)">
+                                <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                            </svg>
+                        </div>
+                        <div class="info-content">
+                            <h3>Telefone</h3>
+                            <a href="tel:+5511999999999">+55 (79) 996603824</a>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--accent-pink)">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                            </svg>
+                        </div>
+                        <div class="info-content">
+                            <h3>Localização</h3>
+                            <p>Minas Gerais, Brasil</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/kaua-francino-85b154183/" target="_blank" class="social-icon">
+                            <img src="./images/linkedin.png" alt="LinkedIn">
+                            <span class="social-glow"></span>
+                        </a>
+                        <a href="https://github.com/Nosferatzod" target="_blank" class="social-icon">
+                            <img src="./images/github.png" alt="GitHub">
+                            <span class="social-glow"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer>
+    <footer class="footer-glow">
         <div class="social-media">
-            <a href="https://www.linkedin.com/in/kaua-francino-85b154183/" target="_blank" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/kaua-francino-85b154183/" target="_blank" class="social-icon">
                 <img src="./images/linkedin.png" alt="LinkedIn">
+                <span class="social-glow"></span>
             </a>
-            <a href="https://github.com/Nosferatzod" target="_blank" aria-label="GitHub">
+            <a href="https://github.com/Nosferatzod" target="_blank" class="social-icon">
                 <img src="./images/github.png" alt="GitHub">
+                <span class="social-glow"></span>
             </a>
         </div>
-        <p>&copy; 2024 Kauã Francino dos Santos Lima. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Kauã Francino. Todos os direitos reservados.</p>
+        <div class="footer-line"></div>
     </footer>
     <script src="./js/validar_from.js"></script>
     <script src="./js/scripts.js"></script>
+    <script src="./js/contact.js"></script>
 </body>
 </html>

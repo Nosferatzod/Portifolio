@@ -1,60 +1,90 @@
-
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <link rel="icon" href="./images/lirio-aranha.png" type="image/png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Meu Portfólio</title>
+    <title>Home - Portfólio</title>
     <link rel="stylesheet" href="./css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
+    <!-- Efeito de transição entre páginas -->
+    <div class="page-transition">
+        <div class="transition-line"></div>
+    </div>
+
     <header class="header">
         <div class="logo-container">
             <img class="small-logo" src="./images/lirio_icon.png" alt="Logo">
         </div>
-        <div class="container">
-            <button class="navbar-toggler" id="toggleButton" aria-label="Toggle navigation">
-                <span class="hamburguer"></span>
-                <span class="hamburguer"></span>
-                <span class="hamburguer"></span>
-            </button>
-            <nav class="navbar" id="navbarNav">
-                <ul class="nav-list">
-                    <li class="nav-item"><a href="./index.html" class="nav-link active">Home</a></li>
-                    <li class="nav-item"><a href="./projects.html" class="nav-link">Projetos</a></li>
-                    <li class="nav-item"><a href="./about.html" class="nav-link">Sobre mim</a></li>
-                    <li class="nav-item"><a href="./contact.html" class="nav-link">Contato</a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="./index.html" class="nav-link active" data-transition="home">Home</a></li>
+                <li class="nav-item"><a href="./projects.html" class="nav-link" data-transition="projects">Projetos</a></li>
+                <li class="nav-item"><a href="./about.html" class="nav-link" data-transition="about">Sobre mim</a></li>
+                <li class="nav-item"><a href="./contact.html" class="nav-link" data-transition="contact">Contato</a></li>
+            </ul>
+            
+        </nav>
+        <button class="navbar-toggler" id="toggleButton" aria-label="Toggle navigation">
+            <span class="hamburguer"></span>
+            <span class="hamburguer"></span>
+            <span class="hamburguer"></span>
+        </button>
     </header>
+
     <main class="container">
-        <section class="hero">
+        <section class="hero animate__animated animate__fadeIn">
             <div class="hero-content">
-                <img src="./images/ken_kaneki.jpg" alt="Avatar" class="avatar">
-                <h1>Olá, eu sou <span>Kauã Francino dos Santos Lima</span></h1>
-                <p>Desenvolvedor Web | Designer | Criador</p>
+                <div class="avatar-container">
+                    <img src="./images/git.png" alt="Avatar" class="avatar">
+                    <div class="avatar-glow"></div>
+                </div>
+                <h1>Olá, eu sou <span class="text-gradient">Kauã Francino</span></h1>
+                <p class="typing-text">Desenvolvedor Web | Designer | Criador</p>
                 <div class="hero-buttons">
-                    <a href="./projects.html" class="btn">Ver Meus Projetos</a>
-                    <a href="./about.html" class="btn">Saiba Mais</a>
+                    <a href="./projects.html" class="btn btn-red">Ver Projetos</a>
+                    <a href="./about.html" class="btn btn-blue">Saiba Mais</a>
                 </div>
             </div>
         </section>
-        <section class="about">
-            <h2>Minha Trajetória</h2>
-            <p>Desejo melhorar comigo mesmo nessa carreira como um programador. Estou fazendo curso de desenvolvimento de sistemas no Senac (conclusão em 07/2025) e técnico para internet no Senai (conclusão em 08/2025). Quero me aprimorar rapidamente para entrar no mercado de trabalho e ter uma experiência positiva em minha carreira profissional.</p>
+
+        <section class="about box-glow">
+            <h2 class="section-title">Minha Trajetória</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-point"></div>
+                    <div class="timeline-content">
+                        <p>Desejo melhorar comigo mesmo nessa carreira como um programador. Estou fazendo curso de desenvolvimento de sistemas no Senac (conclusão em 07/2025) e técnico para internet no Senai (conclusão em 08/2025).</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-point"></div>
+                    <div class="timeline-content">
+                        <p>Quero me aprimorar rapidamente para entrar no mercado de trabalho e ter uma experiência positiva em minha carreira profissional.</p>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
-    <footer>
+
+    <footer class="footer-glow">
         <div class="social-media">
-            <a href="https://www.linkedin.com/in/kaua-francino-85b154183/" target="_blank"><img src="./images/linkedin.png" alt="LinkedIn"></a>
-            <a href="https://github.com/Nosferatzod" target="_blank"><img src="./images/github.png" alt="GitHub"></a>
+            <a href="https://www.linkedin.com/in/kaua-francino-85b154183/" target="_blank" class="social-icon">
+                <img src="./images/linkedin.png" alt="LinkedIn">
+                <span class="social-glow"></span>
+            </a>
+            <a href="https://github.com/Nosferatzod" target="_blank" class="social-icon">
+                <img src="./images/github.png" alt="GitHub">
+                <span class="social-glow"></span>
+            </a>
         </div>
-        <p>&copy; 2024 Kauã Francino dos Santos Lima. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Kauã Francino. Todos os direitos reservados.</p>
+        <div class="footer-line"></div>
     </footer>
+
     <script src="./js/scripts.js"></script>
 </body>
 </html>

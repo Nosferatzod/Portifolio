@@ -394,7 +394,7 @@ footer p {
         display: block;
         position: absolute;
         top: 1.5rem;
-        right: 1rem;
+        left: 1rem;
     }
 
     .navbar {

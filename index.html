@@ -1,93 +1,460 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <link rel="icon" href="./images/lirio-aranha.png" type="image/png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Portfólio</title>
-    <link rel="stylesheet" href="./css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-</head>
-<body>
-    <!-- Efeito de transição entre páginas -->
-    <div class="page-transition">
-        <div class="transition-line"></div>
-    </div>
 
+    <!-- Aplica o tema salvo antes da primeira pintura (evita flash branco) -->
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('kf-theme');
+                if (t) document.documentElement.setAttribute('data-theme', t);
+            } catch (e) { }
+        })();
+    </script>
+
+    <title data-i18n-title="meta.home">Kauã Francino — Desenvolvedor Full Stack</title>
+    <meta name="description" data-i18n-content="meta.descHome"
+        content="Desenvolvedor Full Stack focado em Vue.js, React Native e Java. Portfólio de projetos web e mobile.">
+    <meta name="theme-color" content="#fbfaf9">
+    <meta name="author" content="Kauã Francino">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kauã Francino — Desenvolvedor Full Stack">
+    <meta property="og:description" content="Portfólio de projetos web e mobile.">
+    <meta property="og:image" content="./images/eu.webp">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="./images/lirio_icon.png" type="image/png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/pages.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#main" data-i18n="nav.skip">Pular para o conteúdo</a>
+    <div class="ambient" aria-hidden="true"></div>
+
+    <!-- ============ HEADER ============ -->
     <header class="header">
-        <div class="logo-container">
-            <img class="small-logo" src="./images/lirio_icon.png" alt="Logo">
+        <div class="header__inner">
+            <a class="brand" href="./index.html" aria-label="Kauã Francino — início">
+                <img class="brand__mark" src="./images/lirio_icon.png" alt="" width="34" height="34">
+                <span class="brand__text">Kauã Francino<span>.dev</span></span>
+            </a>
+
+            <nav class="nav" aria-label="Principal">
+                <span class="nav__pill" aria-hidden="true"></span>
+                <a class="nav__link is-active" href="./index.html" data-i18n="nav.home">Início</a>
+                <a class="nav__link" href="./projects.html" data-i18n="nav.projects">Projetos</a>
+                <a class="nav__link" href="./about.html" data-i18n="nav.about">Sobre</a>
+                <a class="nav__link" href="./contact.html" data-i18n="nav.contact">Contato</a>
+            </nav>
+
+            <div class="header__actions">
+                <button class="icon-btn" type="button" data-theme-toggle data-i18n-aria="nav.theme"
+                    aria-label="Alternar tema claro/escuro">
+                    <span class="theme-toggle__icon">
+                        <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+                            <circle cx="12" cy="12" r="4" />
+                            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+                        </svg>
+                        <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
+                        </svg>
+                    </span>
+                </button>
+
+                <div class="lang" data-lang>
+                    <button class="lang__btn" type="button" aria-haspopup="listbox" aria-expanded="false"
+                        data-i18n-aria="nav.lang" aria-label="Selecionar idioma">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" width="15"
+                            height="15" aria-hidden="true">
+                            <circle cx="12" cy="12" r="9" />
+                            <path d="M3 12h18M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18z" />
+                        </svg>
+                        <span data-lang-current>PT</span>
+                        <svg class="lang__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" aria-hidden="true">
+                            <path d="m6 9 6 6 6-6" />
+                        </svg>
+                    </button>
+                    <div class="lang__menu" role="listbox" aria-label="Idiomas"></div>
+                </div>
+
+                <button class="burger" type="button" aria-expanded="false" aria-controls="mobileMenu"
+                    data-i18n-aria="nav.menu" aria-label="Abrir menu">
+                    <span class="burger__box"><span></span><span></span><span></span></span>
+                </button>
+            </div>
         </div>
-        <nav class="navbar">
-            <ul class="nav-list">
-                <li class="nav-item"><a href="./index.html" class="nav-link active" data-transition="home">Home</a></li>
-                <li class="nav-item"><a href="./projects.html" class="nav-link" data-transition="projects">Projetos</a></li>
-                <li class="nav-item"><a href="./about.html" class="nav-link" data-transition="about">Sobre mim</a></li>
-                <li class="nav-item"><a href="./contact.html" class="nav-link" data-transition="contact">Contato</a></li>
-            </ul>
-            
-        </nav>
-        <button class="navbar-toggler" id="toggleButton" aria-label="Toggle navigation">
-            <span class="hamburguer"></span>
-            <span class="hamburguer"></span>
-            <span class="hamburguer"></span>
-        </button>
+        <div class="progress" aria-hidden="true"></div>
     </header>
 
-    <main class="container">
-        <section class="hero animate__animated animate__fadeIn">
-            <div class="hero-content">
-                <div class="avatar-container">
-                    <img src="./images/eu.jpg" alt="Avatar" class="avatar">
-                    <div class="avatar-glow"></div>
+    <!-- ============ MENU MOBILE ============ -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a class="mobile-menu__link is-active" style="--i:0" href="./index.html">
+            <span class="num">01</span><span data-i18n="nav.home">Início</span>
+        </a>
+        <a class="mobile-menu__link" style="--i:1" href="./projects.html">
+            <span class="num">02</span><span data-i18n="nav.projects">Projetos</span>
+        </a>
+        <a class="mobile-menu__link" style="--i:2" href="./about.html">
+            <span class="num">03</span><span data-i18n="nav.about">Sobre</span>
+        </a>
+        <a class="mobile-menu__link" style="--i:3" href="./contact.html">
+            <span class="num">04</span><span data-i18n="nav.contact">Contato</span>
+        </a>
+        <div class="mobile-menu__foot">
+            <label class="info-label" for="langSelect" data-i18n="nav.lang">Selecionar idioma</label>
+            <select class="lang-select" id="langSelect" data-lang-select></select>
+        </div>
+    </div>
+
+    <!-- ============ CONTEÚDO ============ -->
+    <main id="main">
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="shell hero__grid">
+                <div class="hero__col">
+                    <p class="eyebrow" data-i18n="hero.eyebrow">Desenvolvedor Full Stack</p>
+
+                    <h1 class="hero__title">
+                        <span class="line" data-words="auto" data-i18n="hero.titleA">Construo produtos</span>
+                        <span class="line text-gradient" data-words="auto" data-i18n="hero.titleB">web e mobile</span>
+                        <span class="line" data-words="auto" data-i18n="hero.titleC">que funcionam.</span>
+                    </h1>
+
+                    <p class="hero__role">
+                        <span class="hero__role-text" data-roles></span>
+                    </p>
+
+                    <p class="hero__desc" data-i18n="hero.desc">
+                        Sou Kauã Francino. Transformo ideias em aplicações completas — da interface ao banco de dados —
+                        com foco em código limpo, desempenho e experiências que as pessoas gostam de usar.
+                    </p>
+
+                    <div class="hero__actions">
+                        <a class="btn btn--primary" href="./projects.html">
+                            <span data-i18n="hero.ctaPrimary">Ver projetos</span>
+                            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M5 12h14M13 6l6 6-6 6" />
+                            </svg>
+                        </a>
+                        <a class="btn btn--ghost" href="./contact.html" data-i18n="hero.ctaSecondary">Falar comigo</a>
+                    </div>
+
+                    <div class="hero__meta">
+                        <span class="badge-live">
+                            <span class="badge-live__dot" aria-hidden="true"></span>
+                            <span data-i18n="hero.available">Disponível para oportunidades</span>
+                        </span>
+                        <span class="mono" style="font-size:.8rem;color:var(--text-3)"
+                            data-i18n="hero.location">Brasil · Remoto</span>
+                    </div>
                 </div>
-                <h1>Olá, eu sou <span class="text-gradient">Kauã Francino</span></h1>
-                <p class="typing-text">Desenvolvedor Web | Designer | Criador</p>
-                <div class="hero-buttons">
-                    <a href="./projects.html" class="btn btn-red">Ver Projetos</a>
-                    <a href="./about.html" class="btn btn-blue">Saiba Mais</a>
+
+                <div class="hero__col">
+                    <div class="portrait">
+                        <span class="portrait__glow" aria-hidden="true"></span>
+                        <span class="portrait__frame" aria-hidden="true"></span>
+                        <img class="portrait__img" src="./images/eu.webp" alt="Kauã Francino" width="380" height="475"
+                            fetchpriority="high" decoding="async">
+                        <span class="portrait__tag" data-i18n="hero.tag">Full Stack · Web &amp; Mobile</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-hint" aria-hidden="true">
+                <span class="scroll-hint__rail"></span>
+                <span data-i18n="hero.scroll">Role</span>
+            </div>
+        </section>
+
+        <!-- Marquee de tecnologias -->
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee__track">
+                <span class="marquee__item">Vue.js</span>
+                <span class="marquee__item">React</span>
+                <span class="marquee__item">React Native</span>
+                <span class="marquee__item">JavaScript</span>
+                <span class="marquee__item">Java</span>
+                <span class="marquee__item">PHP</span>
+                <span class="marquee__item">Python</span>
+                <span class="marquee__item">MySQL</span>
+                <span class="marquee__item">Git</span>
+                <span class="marquee__item">HTML</span>
+                <span class="marquee__item">CSS</span>
+            </div>
+        </div>
+
+        <!-- Estatísticas -->
+        <section class="section" style="padding-block:clamp(2.5rem,2rem+2vw,4rem)">
+            <div class="shell">
+                <div class="stats" data-reveal>
+                    <div class="stat">
+                        <p class="stat__num" data-i18n="stats.projectsN">17+</p>
+                        <p class="stat__label" data-i18n="stats.projects">Projetos publicados</p>
+                    </div>
+                    <div class="stat">
+                        <p class="stat__num" data-i18n="stats.langsN">10+</p>
+                        <p class="stat__label" data-i18n="stats.langs">Linguagens &amp; frameworks</p>
+                    </div>
+                    <div class="stat">
+                        <p class="stat__num" data-i18n="stats.internN">6</p>
+                        <p class="stat__label" data-i18n="stats.intern">Meses de estágio</p>
+                    </div>
+                    <div class="stat">
+                        <p class="stat__num" data-i18n="stats.coursesN">2</p>
+                        <p class="stat__label" data-i18n="stats.courses">Formações técnicas</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="about box-glow">
-            <h2 class="section-title">Minha Trajetória</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-point"></div>
-                    <div class="timeline-content">
-                        <p>Olá, sou Kauã Francino. Desenvolvedor Full Stack | Web & Mobile Especialista em criar aplicações modernas utilizando Vue.js, React Native e Java. Formado pelo Senac e Senai, fiz estágio no senai de 2 meses e outro na empresa M-DU Tecnologia por 4 meses.
-</p>
+        <!-- Projetos em destaque -->
+        <section class="section">
+            <div class="shell">
+                <div class="section-head" data-reveal>
+                    <p class="eyebrow" data-i18n="featured.eyebrow">01 — Trabalhos</p>
+                    <h2 data-i18n="featured.title">Projetos em destaque</h2>
+                    <p data-i18n="featured.desc">Uma seleção do que construí. Cada projeto está publicado e pode ser
+                        aberto agora mesmo.</p>
+                </div>
+
+                <div class="projects">
+                    <a class="project project--featured" data-reveal
+                        href="https://prontuario-eletronico-kappa.vercel.app/" target="_blank" rel="noopener">
+                        <span class="project__ribbon" data-i18n="projectsPage.featured">Destaque</span>
+                        <div class="project__media">
+                            <img class="project__img" src="./images/LogoProntuario.webp" alt="Prontuário Eletrônico"
+                                loading="lazy" decoding="async">
+                        </div>
+                        <div class="project__body">
+                            <h3 class="project__title">
+                                <span>Prontuário Eletrônico</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M7 17 17 7M8 7h9v9" />
+                                </svg>
+                            </h3>
+                            <p class="project__desc" data-i18n="proj.prontuario">Sistema web para registro e consulta de
+                                prontuários médicos, com fluxo de cadastro e histórico do paciente.</p>
+                            <div class="project__tags">
+                                <span class="chip chip--dot" data-i18n="cat.app">Sistema</span>
+                                <span class="chip" data-i18n="projectsPage.live">Ao vivo</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a class="project" data-reveal data-reveal-delay="90"
+                        href="https://projetct-nerv.vercel.app/login" target="_blank" rel="noopener">
+                        <div class="project__media">
+                            <img class="project__img" src="./images/project_nerv.webp" alt="Project Nerv" loading="lazy"
+                                decoding="async">
+                        </div>
+                        <div class="project__body">
+                            <h3 class="project__title">
+                                <span>Project Nerv</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M7 17 17 7M8 7h9v9" />
+                                </svg>
+                            </h3>
+                            <p class="project__desc" data-i18n="proj.nerv">Aplicação com autenticação e painel interno,
+                                inspirada na identidade visual de Evangelion.</p>
+                            <div class="project__tags">
+                                <span class="chip chip--dot" data-i18n="cat.theme">Temático</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div style="margin-top:2rem" data-reveal>
+                    <a class="btn btn--ghost" href="./projects.html">
+                        <span data-i18n="featured.all">Ver todos os projetos</span>
+                        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M5 12h14M13 6l6 6-6 6" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stack -->
+        <section class="section">
+            <div class="shell">
+                <div class="section-head" data-reveal>
+                    <p class="eyebrow" data-i18n="stackSec.eyebrow">02 — Stack</p>
+                    <h2 data-i18n="stackSec.title">Tecnologias que uso</h2>
+                    <p data-i18n="stackSec.desc">Ferramentas com as quais trabalho no dia a dia, agrupadas por área de
+                        atuação.</p>
+                </div>
+
+                <div class="stack">
+                    <div class="stack__group" data-reveal>
+                        <div class="stack__head">
+                            <span class="stack__icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                                    <path d="M3 9h18M9 21V9" />
+                                </svg>
+                            </span>
+                            <h3 class="stack__title" data-i18n="stackSec.frontend">Front-end</h3>
+                        </div>
+                        <div class="stack__items">
+                            <span class="chip">HTML</span>
+                            <span class="chip">CSS</span>
+                            <span class="chip">JavaScript</span>
+                            <span class="chip">Vue.js</span>
+                            <span class="chip">React</span>
+                        </div>
+                    </div>
+
+                    <div class="stack__group" data-reveal data-reveal-delay="80">
+                        <div class="stack__head">
+                            <span class="stack__icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <rect x="3" y="4" width="18" height="7" rx="1.5" />
+                                    <rect x="3" y="13" width="18" height="7" rx="1.5" />
+                                    <path d="M7 7.5h.01M7 16.5h.01" />
+                                </svg>
+                            </span>
+                            <h3 class="stack__title" data-i18n="stackSec.backend">Back-end</h3>
+                        </div>
+                        <div class="stack__items">
+                            <span class="chip">Java</span>
+                            <span class="chip">PHP</span>
+                            <span class="chip">Python</span>
+                        </div>
+                    </div>
+
+                    <div class="stack__group" data-reveal data-reveal-delay="160">
+                        <div class="stack__head">
+                            <span class="stack__icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <rect x="6" y="2" width="12" height="20" rx="2.5" />
+                                    <path d="M11 18h2" />
+                                </svg>
+                            </span>
+                            <h3 class="stack__title" data-i18n="stackSec.mobile">Mobile</h3>
+                        </div>
+                        <div class="stack__items">
+                            <span class="chip">React Native</span>
+                        </div>
+                    </div>
+
+                    <div class="stack__group" data-reveal data-reveal-delay="240">
+                        <div class="stack__head">
+                            <span class="stack__icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <ellipse cx="12" cy="5.5" rx="8" ry="3" />
+                                    <path d="M4 5.5v13c0 1.7 3.6 3 8 3s8-1.3 8-3v-13M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3" />
+                                </svg>
+                            </span>
+                            <h3 class="stack__title" data-i18n="stackSec.data">Dados &amp; Ferramentas</h3>
+                        </div>
+                        <div class="stack__items">
+                            <span class="chip">MySQL</span>
+                            <span class="chip">Git</span>
+                            <span class="chip">GitHub</span>
+                        </div>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-point"></div>
-                    <div class="timeline-content">
-                        <p>Quero me aprimorar rapidamente para entrar no mercado de trabalho e ter uma experiência positiva em minha carreira profissional.</p>
-                    </div>
+            </div>
+        </section>
+
+        <!-- Sobre (resumo) -->
+        <section class="section">
+            <div class="shell">
+                <div class="section-head" data-reveal>
+                    <p class="eyebrow" data-i18n="aboutSec.eyebrow">03 — Sobre</p>
+                    <h2 data-i18n="aboutSec.title">Um pouco sobre mim</h2>
+                </div>
+                <div class="prose" style="max-width:62ch" data-reveal data-reveal-delay="80">
+                    <p data-i18n="aboutSec.p1">Comecei programando por curiosidade e transformei isso em ofício. Hoje
+                        construo aplicações completas: penso a interface, escrevo a lógica e cuido dos dados.</p>
+                    <p data-i18n="aboutSec.p2">Me formei em Desenvolvimento de Sistemas pelo Senac e em Técnico para
+                        Internet pelo Senai, e passei por estágios que me ensinaram a trabalhar em equipe e entregar sob
+                        prazo.</p>
+                    <p style="margin-top:1.8rem">
+                        <a class="btn btn--ghost" href="./about.html">
+                            <span data-i18n="aboutSec.cta">Conhecer minha trajetória</span>
+                            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M5 12h14M13 6l6 6-6 6" />
+                            </svg>
+                        </a>
+                    </p>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="footer-glow">
-        <div class="social-media">
-            <a href="https://www.linkedin.com/in/kaua-francino-85b154183/" target="_blank" class="social-icon">
-                <img src="./images/linkedin.png" alt="LinkedIn">
-                <span class="social-glow"></span>
-            </a>
-            <a href="https://github.com/Nosferatzod" target="_blank" class="social-icon">
-                <img src="./images/github.png" alt="GitHub">
-                <span class="social-glow"></span>
-            </a>
+    <!-- ============ RODAPÉ ============ -->
+    <footer class="footer">
+        <div class="shell footer__inner">
+            <div class="footer__top">
+                <div class="footer__cta">
+                    <h2 data-i18n="footer.ctaTitle">Vamos construir algo juntos?</h2>
+                    <p data-i18n="footer.ctaText">Estou disponível para novas oportunidades e sempre aberto a uma boa
+                        conversa sobre código.</p>
+                </div>
+                <div style="display:flex;align-items:center;gap:.9rem;flex-wrap:wrap">
+                    <a class="btn btn--primary" href="./contact.html" data-i18n="footer.ctaBtn">Entrar em contato</a>
+                    <div class="socials">
+                        <a class="social" href="https://www.linkedin.com/in/kaua-francino-85b154183/" target="_blank"
+                            rel="noopener" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path
+                                    d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.76V21h-4v-5.6c0-1.34-.03-3.06-1.9-3.06-1.9 0-2.2 1.45-2.2 2.96V21H9z" />
+                            </svg>
+                        </a>
+                        <a class="social" href="https://github.com/Nosferatzod" target="_blank" rel="noopener"
+                            aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path
+                                    d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49l-.01-1.72c-2.78.62-3.37-1.37-3.37-1.37-.46-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.57 2.34 1.12 2.91.85.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.8-4.57 5.05.36.32.68.94.68 1.9l-.01 2.82c0 .27.18.6.69.49A10.03 10.03 0 0 0 22 12.25C22 6.58 17.52 2 12 2z" />
+                            </svg>
+                        </a>
+                        <a class="social" href="mailto:kauafrancino@gmail.com" aria-label="E-mail">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="2.5" y="4.5" width="19" height="15" rx="2.5" />
+                                <path d="m3 7 9 6 9-6" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p>&copy; <span data-year>2026</span> Kauã Francino. <span data-i18n="footer.rights">Todos os direitos
+                        reservados.</span></p>
+                <p class="footer__meta" data-i18n="footer.built">Feito à mão com HTML, CSS e JavaScript</p>
+            </div>
         </div>
-        <p>&copy; 2024 Kauã Francino. Todos os direitos reservados.</p>
-        <div class="footer-line"></div>
     </footer>
 
-    <script src="./js/scripts.js"></script>
+    <script src="./js/i18n.js" defer></script>
+    <script src="./js/main.js" defer></script>
 </body>
 
 </html>
-

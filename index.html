@@ -24,7 +24,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Kauã Francino — Desenvolvedor Full Stack">
     <meta property="og:description" content="Portfólio de projetos web e mobile.">
-    <meta property="og:image" content="./images/eu.webp">
+    <meta property="og:image" content="./images/og-card.png">
     <meta name="twitter:card" content="summary_large_image">
 
     <link rel="icon" href="./images/lirio_icon.png" type="image/png">
@@ -170,8 +170,38 @@
                     <div class="portrait">
                         <span class="portrait__glow" aria-hidden="true"></span>
                         <span class="portrait__frame" aria-hidden="true"></span>
-                        <img class="portrait__img" src="./images/eu.webp" alt="Kauã Francino" width="380" height="475"
-                            fetchpriority="high" decoding="async">
+
+                        <!-- O código é decorativo para o leitor de tela: a legenda
+                             abaixo diz a mesma coisa sem a pontuação toda. -->
+                        <figure class="codecard" data-codecard data-reveal>
+                            <div class="codecard__bar" aria-hidden="true">
+                                <span class="codecard__dots"><i></i><i></i><i></i></span>
+                                <span class="codecard__file">kaua.js</span>
+                            </div>
+
+                            <div class="codecard__body" aria-hidden="true">
+                                <span class="cc-line"><span class="cc-txt"><span class="cc-kw">const</span> kaua <span class="cc-punc">= {</span></span></span>
+                                <span class="cc-line"><span class="cc-txt">  <span class="cc-prop">role</span><span class="cc-punc">:</span> <span class="cc-str" data-i18n="code.role">'Desenvolvedor Full Stack'</span><span class="cc-punc">,</span></span></span>
+                                <span class="cc-line"><span class="cc-txt">  <span class="cc-prop">stack</span><span class="cc-punc">: {</span></span></span>
+                                <span class="cc-line"><span class="cc-txt">    <span class="cc-prop">web</span><span class="cc-punc">: [</span><span class="cc-str">'Vue'</span><span class="cc-punc">,</span> <span class="cc-str">'React'</span><span class="cc-punc">],</span></span></span>
+                                <span class="cc-line"><span class="cc-txt">    <span class="cc-prop">app</span><span class="cc-punc">: [</span><span class="cc-str">'React Native'</span><span class="cc-punc">],</span></span></span>
+                                <span class="cc-line"><span class="cc-txt">    <span class="cc-prop">api</span><span class="cc-punc">: [</span><span class="cc-str">'Java'</span><span class="cc-punc">,</span> <span class="cc-str">'Spring'</span><span class="cc-punc">,</span> <span class="cc-str">'PHP'</span><span class="cc-punc">],</span></span></span>
+                                <span class="cc-line"><span class="cc-txt">    <span class="cc-prop">db</span><span class="cc-punc">:</span>  <span class="cc-punc">[</span><span class="cc-str">'MySQL'</span><span class="cc-punc">,</span> <span class="cc-str">'PostgreSQL'</span><span class="cc-punc">],</span></span></span>
+                                <span class="cc-line"><span class="cc-txt">  <span class="cc-punc">},</span></span></span>
+                                <span class="cc-line"><span class="cc-txt">  <span class="cc-prop">focus</span><span class="cc-punc">:</span> <span class="cc-str" data-i18n="code.focus">'produtos ponta a ponta'</span><span class="cc-punc">,</span></span></span>
+                                <span class="cc-line"><span class="cc-txt">  <span class="cc-prop">from</span><span class="cc-punc">:</span>  <span class="cc-str" data-i18n="code.from">'Brasil · Remoto'</span><span class="cc-punc">,</span></span></span>
+                                <span class="cc-line"><span class="cc-txt">  <span class="cc-prop">open</span><span class="cc-punc">:</span>  <span class="cc-num">true</span><span class="cc-punc">,</span></span></span>
+                                <span class="cc-line"><span class="cc-txt"><span class="cc-punc">};</span></span></span>
+                                <span class="cc-line"><span class="cc-txt"> </span></span>
+                                <span class="cc-line"><span class="cc-txt">kaua<span class="cc-punc">.</span><span class="cc-fn">build</span><span class="cc-punc">(</span><span data-i18n="code.arg">suaIdeia</span><span class="cc-punc">);</span></span></span>
+                                <span class="cc-line cc-line--last"><span class="cc-txt"><span class="cc-com" data-i18n="code.comment">// → do protótipo ao deploy</span></span></span>
+                            </div>
+
+                            <figcaption class="sr-only" data-i18n="code.a11y">Cartão de código com o resumo do
+                                perfil: desenvolvedor full stack, Vue, React, React Native, Java, Spring, PHP,
+                                MySQL e PostgreSQL, no Brasil e disponível para trabalho remoto.</figcaption>
+                        </figure>
+
                         <span class="portrait__tag" data-i18n="hero.tag">Full Stack · Web &amp; Mobile</span>
                     </div>
                 </div>

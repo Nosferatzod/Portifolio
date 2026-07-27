@@ -47,6 +47,17 @@ window.I18N = {
             scroll: 'Role',
             tag: 'Full Stack · Web & Mobile'
         },
+        // Cartão de código do hero e da página Sobre.
+        // Os valores de string já vêm com as aspas: o token inteiro é um span só.
+        code: {
+            role: "'Desenvolvedor Full Stack'",
+            focus: "'produtos ponta a ponta'",
+            from: "'Brasil · Remoto'",
+            arg: 'suaIdeia',
+            comment: '// → do protótipo ao deploy',
+            a11y: 'Cartão de código com o resumo do perfil: desenvolvedor full stack, Vue, React, React Native, Java, Spring, PHP, MySQL e PostgreSQL, no Brasil e disponível para trabalho remoto.',
+            a11yAbout: 'Cartão de código representando o perfil como um componente React: função Perfil com a stack Vue, React, React Native, Java, Spring e MySQL.'
+        },
         stats: {
             projects: 'Projetos publicados',
             projectsN: '17+',
@@ -242,6 +253,15 @@ window.I18N = {
             scroll: 'Scroll',
             tag: 'Full Stack · Web & Mobile'
         },
+        code: {
+            role: "'Full Stack Developer'",
+            focus: "'end-to-end products'",
+            from: "'Brazil · Remote'",
+            arg: 'yourIdea',
+            comment: '// → from prototype to deploy',
+            a11y: 'Code card summarising the profile: full stack developer, Vue, React, React Native, Java, Spring, PHP, MySQL and PostgreSQL, based in Brazil and available for remote work.',
+            a11yAbout: 'Code card presenting the profile as a React component: a Perfil function with the Vue, React, React Native, Java, Spring and MySQL stack.'
+        },
         stats: {
             projects: 'Shipped projects',
             projectsN: '17+',
@@ -436,6 +456,15 @@ window.I18N = {
             location: 'Brasil · Remoto',
             scroll: 'Desliza',
             tag: 'Full Stack · Web y Móvil'
+        },
+        code: {
+            role: "'Desarrollador Full Stack'",
+            focus: "'productos de punta a punta'",
+            from: "'Brasil · Remoto'",
+            arg: 'tuIdea',
+            comment: '// → del prototipo al deploy',
+            a11y: 'Tarjeta de código con el resumen del perfil: desarrollador full stack, Vue, React, React Native, Java, Spring, PHP, MySQL y PostgreSQL, en Brasil y disponible para trabajo remoto.',
+            a11yAbout: 'Tarjeta de código que presenta el perfil como un componente React: función Perfil con el stack Vue, React, React Native, Java, Spring y MySQL.'
         },
         stats: {
             projects: 'Proyectos publicados',

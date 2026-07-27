@@ -72,6 +72,28 @@ Variantes disponíveis no HTML:
 Se a imagem for um logo ou ícone (e não um print), acrescente a classe
 `project__img--contain` para ela respirar em vez de esticar.
 
+### Mexer no cartão de código
+
+No lugar de uma foto, o hero e a página Sobre mostram um cartão estilizado como
+janela de editor, que se "digita" sozinho ao entrar na tela. Não há imagem
+envolvida — é HTML, CSS e alguns tokens de sintaxe.
+
+Cada linha é uma `<span class="cc-line">` com uma `<span class="cc-txt">` dentro
+(a de fora segura o cursor, a de dentro é o que vai sendo revelado). Dentro dela
+vão os tokens: `cc-kw`, `cc-prop`, `cc-str`, `cc-num`, `cc-fn`, `cc-punc`,
+`cc-com`. A indentação são espaços de verdade — o CSS usa `white-space: pre`.
+
+Para trocar uma linha, edite o HTML direto. Os textos que mudam de idioma
+(cargo, foco, comentário) saem de `code:` no [`js/i18n.js`](js/i18n.js), e os
+valores de string **já incluem as aspas** — o token inteiro é um span só.
+
+A última linha leva também `cc-line--last`: é ela que fica com o cursor piscando
+no fim. Se você adicionar linhas depois dela, mova a classe.
+
+O ritmo da digitação está em `initCodeCards()` no [`js/main.js`](js/main.js):
+`MS_PER_CHAR` e `LINE_GAP`. O JS só mede quantos caracteres cada linha tem e
+escreve `--n`, `--dur` e `--d`; quem anima é o CSS.
+
 ### Adicionar um idioma
 
 Em `js/i18n.js`, duplique um bloco de idioma inteiro e registre o código em
@@ -107,6 +129,14 @@ Altere os dois.
   dispositivos com mouse — o celular não paga por ele.
 - **Imagens.** Todas em WebP, com `loading="lazy"` fora da primeira dobra.
   As animadas foram redimensionadas para o tamanho real dos cartões.
+- **Cartão de código.** A digitação é só `clip-path` e `transform`, com
+  `steps()` para o efeito de caractere a caractere — nada de JS por frame.
+  Em fonte monoespaçada `1ch` é exatamente um caractere, então a mesma variável
+  `--n` serve de contagem de passos e de posição final do cursor. Sem JS o
+  código simplesmente aparece inteiro; com `prefers-reduced-motion` também,
+  com o cursor parado no fim.
+- **`og:image`.** `images/og-card.png` (1200×630) é o cartão que aparece quando
+  o link é colado no LinkedIn ou no WhatsApp.
 
 ## Publicar
 

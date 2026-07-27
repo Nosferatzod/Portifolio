@@ -126,9 +126,31 @@
 
                 <!-- Coluna lateral: foto + resumo -->
                 <aside class="about-aside" data-reveal>
-                    <div class="about-photo">
-                        <img src="./images/eu.webp" alt="Kauã Francino" width="340" height="425" decoding="async">
-                    </div>
+                    <figure class="codecard codecard--compact about-code" data-codecard data-reveal>
+                        <div class="codecard__bar" aria-hidden="true">
+                            <span class="codecard__dots"><i></i><i></i><i></i></span>
+                            <span class="codecard__file">Perfil.jsx</span>
+                        </div>
+
+                        <div class="codecard__body" aria-hidden="true">
+                            <span class="cc-line"><span class="cc-txt"><span class="cc-kw">import</span> <span class="cc-punc">{</span> Dev<span class="cc-punc">,</span> Stack <span class="cc-punc">}</span> <span class="cc-kw">from</span> <span class="cc-str">'./kaua'</span><span class="cc-punc">;</span></span></span>
+                            <span class="cc-line"><span class="cc-txt"> </span></span>
+                            <span class="cc-line"><span class="cc-txt"><span class="cc-kw">export default function</span> <span class="cc-fn">Perfil</span><span class="cc-punc">() {</span></span></span>
+                            <span class="cc-line"><span class="cc-txt">  <span class="cc-kw">return</span> <span class="cc-punc">(</span></span></span>
+                            <span class="cc-line"><span class="cc-txt">    <span class="cc-punc">&lt;</span><span class="cc-fn">Dev</span> <span class="cc-prop">role</span><span class="cc-punc">=</span><span class="cc-str">"Full Stack"</span><span class="cc-punc">&gt;</span></span></span>
+                            <span class="cc-line"><span class="cc-txt">      <span class="cc-punc">&lt;</span><span class="cc-fn">Stack</span> <span class="cc-prop">web</span><span class="cc-punc">={[</span><span class="cc-str">'Vue'</span><span class="cc-punc">,</span> <span class="cc-str">'React'</span><span class="cc-punc">]} /&gt;</span></span></span>
+                            <span class="cc-line"><span class="cc-txt">      <span class="cc-punc">&lt;</span><span class="cc-fn">Stack</span> <span class="cc-prop">app</span><span class="cc-punc">={[</span><span class="cc-str">'React Native'</span><span class="cc-punc">]} /&gt;</span></span></span>
+                            <span class="cc-line"><span class="cc-txt">      <span class="cc-punc">&lt;</span><span class="cc-fn">Stack</span> <span class="cc-prop">api</span><span class="cc-punc">={[</span><span class="cc-str">'Java'</span><span class="cc-punc">,</span> <span class="cc-str">'Spring'</span><span class="cc-punc">]} /&gt;</span></span></span>
+                            <span class="cc-line"><span class="cc-txt">      <span class="cc-punc">&lt;</span><span class="cc-fn">Stack</span> <span class="cc-prop">db</span><span class="cc-punc">={[</span><span class="cc-str">'MySQL'</span><span class="cc-punc">]} /&gt;</span></span></span>
+                            <span class="cc-line"><span class="cc-txt">    <span class="cc-punc">&lt;/</span><span class="cc-fn">Dev</span><span class="cc-punc">&gt;</span></span></span>
+                            <span class="cc-line"><span class="cc-txt">  <span class="cc-punc">);</span></span></span>
+                            <span class="cc-line cc-line--last"><span class="cc-txt"><span class="cc-punc">}</span></span></span>
+                        </div>
+
+                        <figcaption class="sr-only" data-i18n="code.a11yAbout">Cartão de código representando o
+                            perfil como um componente React: função Perfil com a stack Vue, React, React Native,
+                            Java, Spring e MySQL.</figcaption>
+                    </figure>
 
                     <dl class="about-facts">
                         <div class="about-fact">

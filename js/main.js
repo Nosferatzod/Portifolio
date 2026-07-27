@@ -349,6 +349,44 @@
         });
     }
 
+    /* ---------------- Cartão de código: ritmo da digitação ---------------- */
+    // A animação é 100% CSS (clip-path + transform). Aqui só se mede quantos
+    // caracteres cada linha tem para calcular duração, atraso e a posição final
+    // do cursor — em fonte monoespaçada, 1ch = 1 caractere, então --n basta.
+    // Refaz a conta a cada troca de idioma, porque as linhas mudam de tamanho.
+    function initCodeCards() {
+        var MS_PER_CHAR = 7;
+        var LINE_GAP = 55;
+
+        function measure() {
+            document.querySelectorAll('[data-codecard]').forEach(function (card) {
+                var delay = 0;
+                var end = 0;
+
+                card.querySelectorAll('.cc-line').forEach(function (line) {
+                    var txt = line.querySelector('.cc-txt');
+                    var chars = txt ? txt.textContent.length : 0;
+                    var dur = chars * MS_PER_CHAR;
+
+                    // steps(0) invalidaria a animação inteira; a linha em branco
+                    // tem duração zero de qualquer jeito.
+                    line.style.setProperty('--n', String(Math.max(chars, 1)));
+                    line.style.setProperty('--dur', dur + 'ms');
+                    line.style.setProperty('--d', delay + 'ms');
+
+                    end = delay + dur;
+                    delay = end + LINE_GAP;
+                });
+
+                // Quando a última linha termina — é daí que o cursor passa a piscar.
+                card.style.setProperty('--cc-end', end + 'ms');
+            });
+        }
+
+        measure();
+        document.addEventListener('langchange', measure);
+    }
+
     /* ---------------- Halo dos cartões seguindo o cursor ---------------- */
     function initCardHalo() {
         if (!finePointer || reduceMotion) return;
@@ -444,6 +482,7 @@
         initNavPill();
         initMobileMenu();
         initMarquee();
+        initCodeCards();   // mede antes de initReveal, que é quem dispara a animação
         initReveal();
         initRoles();
         initCardHalo();

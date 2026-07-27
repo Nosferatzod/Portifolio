@@ -95,16 +95,230 @@
     aspect-ratio: 4 / 5;
 }
 
-.portrait__img {
+/* ---------- Cartão de código (ocupa o lugar do retrato) ---------- */
+/* Tokens de sintaxe. Mesma estrutura de tema do resto do site:        */
+/* claro por padrão, escuro repetido para preferência do SO e escolha. */
+.codecard {
+    --cc-plain: var(--text);
+    --cc-kw: #b0197a;
+    --cc-prop: #1d4ed8;
+    --cc-str: #0a7a4b;
+    --cc-num: #a1560a;
+    --cc-fn: var(--accent);
+    --cc-punc: var(--text-3);
+    --cc-com: var(--text-3);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) .codecard {
+        --cc-kw: #ff7ab6;
+        --cc-prop: #82a8ff;
+        --cc-str: #7ee2a8;
+        --cc-num: #ffc078;
+        --cc-punc: var(--text-3);
+    }
+}
+
+:root[data-theme='dark'] .codecard {
+    --cc-kw: #ff7ab6;
+    --cc-prop: #82a8ff;
+    --cc-str: #7ee2a8;
+    --cc-num: #ffc078;
+    --cc-punc: var(--text-3);
+}
+
+.codecard {
     position: relative;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    overflow: hidden;
     border-radius: var(--r-lg);
     border: 1px solid var(--border);
+    background: var(--surface);
     box-shadow: var(--shadow-2);
-    filter: saturate(1.02);
+    font-family: var(--font-mono);
+}
+
+/* Barra de título da "janela" */
+.codecard__bar {
+    display: flex;
+    flex: none;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.7rem 0.9rem;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface-2);
+}
+
+.codecard__dots {
+    display: flex;
+    gap: 0.35rem;
+}
+
+.codecard__dots i {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--border-strong);
+}
+
+.codecard__dots i:first-child {
+    background: var(--accent);
+}
+
+.codecard__dots i:nth-child(2) {
+    background: var(--accent-2);
+}
+
+.codecard__file {
+    margin-left: auto;
+    font-size: 0.72rem;
+    color: var(--text-3);
+}
+
+/* Corpo: as linhas ficam centradas no espaço que sobra.
+   O respiro extra embaixo é onde a pílula .portrait__tag flutua — sem ele
+   ela cobriria a última linha de código. */
+.codecard__body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.9rem 0.95rem 3.4rem;
+    overflow: hidden;
+    font-size: clamp(0.66rem, 0.55rem + 0.42vw, 0.8rem);
+    line-height: 1.7;
+    color: var(--cc-plain);
+}
+
+.cc-line {
+    position: relative;
+    display: block;
+    white-space: pre;
+}
+
+/* O recorte vai no filho para o cursor (::after da linha) não ser cortado */
+.cc-txt {
+    display: inline-block;
+}
+
+/* Cursor: em fonte monoespaçada, 1ch = 1 caractere, então --n posiciona exato */
+.cc-line::after {
+    content: '';
+    position: absolute;
+    top: 0.22em;
+    left: 0;
+    width: 0.5ch;
+    height: 1.05em;
+    background: var(--accent);
+    opacity: 0;
+}
+
+/* A última linha guarda o cursor parado no fim, piscando */
+.cc-line--last::after {
+    transform: translateX(calc(var(--n, 0) * 1ch));
+}
+
+/* --n, --dur e --d são medidos uma vez por idioma em main.js.
+   Sem JS nada disso roda e o código aparece inteiro — que é o certo. */
+.codecard.is-visible .cc-txt {
+    animation-name: cc-type;
+    animation-duration: var(--dur, 400ms);
+    animation-timing-function: steps(var(--n, 20), end);
+    animation-delay: var(--d, 0ms);
+    animation-fill-mode: backwards;
+}
+
+.codecard.is-visible .cc-line::after {
+    animation-name: cc-caret;
+    animation-duration: var(--dur, 400ms);
+    animation-timing-function: steps(var(--n, 20), end);
+    animation-delay: var(--d, 0ms);
+}
+
+.codecard.is-visible .cc-line--last::after {
+    animation-name: cc-caret, cc-blink;
+    animation-duration: var(--dur, 400ms), 1.05s;
+    animation-timing-function: steps(var(--n, 20), end), steps(1, end);
+    animation-delay: var(--d, 0ms), var(--cc-end, 3s);
+    animation-iteration-count: 1, infinite;
+}
+
+@keyframes cc-type {
+    from {
+        clip-path: inset(0 100% 0 0);
+    }
+
+    to {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+/* fill-mode none de propósito: fora da janela de digitação o cursor
+   volta ao opacity:0 da regra base e some sozinho. */
+@keyframes cc-caret {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(calc(var(--n, 0) * 1ch));
+    }
+}
+
+@keyframes cc-blink {
+
+    0%,
+    49% {
+        opacity: 1;
+    }
+
+    50%,
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Tokens */
+.cc-kw {
+    color: var(--cc-kw);
+}
+
+.cc-prop {
+    color: var(--cc-prop);
+}
+
+.cc-str {
+    color: var(--cc-str);
+}
+
+.cc-num {
+    color: var(--cc-num);
+}
+
+.cc-fn {
+    color: var(--cc-fn);
+}
+
+.cc-punc {
+    color: var(--cc-punc);
+}
+
+.cc-com {
+    color: var(--cc-com);
+    font-style: italic;
+}
+
+/* Variante da página Sobre: coluna mais estreita, fonte um passo menor.
+   Sem a pílula flutuante por cima, o respiro de baixo volta ao normal. */
+.codecard--compact .codecard__body {
+    font-size: clamp(0.62rem, 0.53rem + 0.4vw, 0.78rem);
+    padding: 1.15rem 0.9rem;
 }
 
 /* Moldura deslocada que se alinha no hover */
@@ -568,18 +782,11 @@
     gap: 1.25rem;
 }
 
-.about-photo {
-    border-radius: var(--r-lg);
-    border: 1px solid var(--border);
-    overflow: hidden;
+/* O cartão já traz borda, raio e fundo. Sem proporção fixa aqui: a altura
+   vem do próprio código, senão sobra um vazio enorme em volta. */
+.about-code {
+    height: auto;
     box-shadow: var(--shadow-1);
-    aspect-ratio: 4 / 5;
-}
-
-.about-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
 }
 
 .about-facts {
@@ -930,7 +1137,7 @@ a.info-item:hover {
         grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     }
 
-    .about-photo {
+    .about-code {
         max-width: 320px;
     }
 

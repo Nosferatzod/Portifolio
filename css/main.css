@@ -1124,4 +1124,16 @@ body.no-scroll {
     .word > span {
         transform: none;
     }
+
+    /* A regra acima zera a duração, mas não o atraso: sem isto as linhas do
+       cartão de código ainda entrariam escalonadas ao longo de segundos. */
+    .cc-txt,
+    .cc-line::after {
+        animation-delay: 0ms !important;
+    }
+
+    /* Código pronto de cara, com o cursor parado no fim da última linha. */
+    .cc-line--last::after {
+        opacity: 1 !important;
+    }
 }

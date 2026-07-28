@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Badge -->
+  <rect x="3" y="3" width="58" height="58" rx="15" fill="#0F172A"/>
+  <rect x="3" y="3" width="58" height="58" rx="15" fill="none" stroke="#00E5FF" stroke-width="2" opacity="0.35"/>
+  <!-- Bowl do "D" = anilha esquerda do halter -->
+  <path d="M20 16 H31 A16 16 0 0 1 31 48 H20 Z" fill="none" stroke="#00E5FF" stroke-width="6" stroke-linejoin="round"/>
+  <!-- Barra do halter saindo do D -->
+  <rect x="30" y="29.5" width="23" height="5" rx="2.5" fill="#00E5FF"/>
+  <!-- Anilhas à direita -->
+  <rect x="43" y="23" width="5.5" height="18" rx="2.5" fill="#00E5FF"/>
+  <rect x="50" y="26.5" width="4" height="11" rx="2" fill="#00E5FF"/>
+</svg>

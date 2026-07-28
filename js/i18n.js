@@ -111,6 +111,7 @@ window.I18N = {
             game: 'Jogo / Ferramenta'
         },
         proj: {
+            dropset: 'Plataforma fitness completa para montar treinos, acompanhar a evolução do aluno e gerenciar alunos. Front-end em Quasar (Vue 3) e back-end em Spring Boot, publicado e rodando em produção.',
             prontuario: 'Sistema web para registro e consulta de prontuários médicos, com fluxo de cadastro e histórico do paciente.',
             biblioteca: 'Aplicação desenvolvida em Scrum para a Semana da Biblioteca, unindo gestão de acervo e dinâmica de jogo.',
             nerv: 'Aplicação com autenticação e painel interno, inspirada na identidade visual de Evangelion.',
@@ -315,6 +316,7 @@ window.I18N = {
             game: 'Game / Tool'
         },
         proj: {
+            dropset: 'Full fitness platform to build workouts, track student progress and manage clients. Quasar (Vue 3) front-end and Spring Boot back-end, live in production.',
             prontuario: 'Web system for recording and consulting medical records, with registration flow and patient history.',
             biblioteca: 'Application built with Scrum for Library Week, mixing collection management with game mechanics.',
             nerv: 'Application with authentication and an internal dashboard, inspired by the Evangelion visual identity.',
@@ -519,6 +521,7 @@ window.I18N = {
             game: 'Juego / Herramienta'
         },
         proj: {
+            dropset: 'Plataforma fitness completa para crear entrenamientos, seguir la evolución del alumno y gestionar clientes. Front-end en Quasar (Vue 3) y back-end en Spring Boot, publicado en producción.',
             prontuario: 'Sistema web para registrar y consultar historiales médicos, con flujo de registro e historial del paciente.',
             biblioteca: 'Aplicación desarrollada con Scrum para la Semana de la Biblioteca, uniendo gestión de acervo y mecánica de juego.',
             nerv: 'Aplicación con autenticación y panel interno, inspirada en la identidad visual de Evangelion.',

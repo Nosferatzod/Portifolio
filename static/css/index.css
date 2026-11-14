@@ -1,0 +1,145 @@
+html, body {
+    text-align: center;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    position: relative; /* Para garantir que o vídeo fique atrás do conteúdo */
+}
+
+body {
+    overflow: hidden;
+}
+
+#background-video {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz o vídeo cobrir a área sem distorcer */
+    z-index: -1; /* Coloca o vídeo atrás do conteúdo */
+}
+
+.senai-logo, main, footer {
+    position: relative; 
+    z-index: 1; 
+}
+
+.senai-logo {
+    max-width: 200px;
+    margin: auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.5); /* Fundo branco com leve transparência */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+main {
+    max-width: 300px;
+    margin: auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.5); /* Fundo branco com leve transparência */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    padding: 15px 0; /*css do lenon */
+    color: #310c69;
+    background-color: rgba(255, 255, 255, 0.5); /* Fundo branco com leve transparência */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.header {
+    background: #007bff;
+    color: rgb(0, 112, 88);
+    text-align: center;
+    padding: 15px 0;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 20px;
+}
+
+.hangman {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.word-display {
+    font-size: 2rem;
+    letter-spacing: 1rem;
+    margin-bottom: 20px;
+}
+
+.letters-guessed {
+    margin: 20px 0;
+    font-size: 1.2rem;
+}
+
+.game-over, .success {
+    display: none;
+    font-size: 1.5rem;
+}
+
+.game-over.show {
+    color: red;
+    display: block;
+}
+
+.success.show {
+    color: green;
+    display: block;
+}
+
+input[type="text"] {
+    width: auto;
+    max-width: 50px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+button {
+    margin-top: 10px;
+}
+
+#hangman-drawing {
+    text-align: center;
+    font-size: 3rem;
+    margin: 20px 0;
+}
+
+/* Botão personalizado */
+.btn-primary {
+    background-color: #e00038;
+    border-color: #ff00ff;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.3s;
+    margin-bottom: 30px;
+}
+
+.btn-primary:hover {
+    background-color: #b1003b;
+    border-color: #004085;
+}
+#background-video {
+    position: fixed; /* Fica fixo na tela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz o vídeo cobrir a área sem distorcer */
+    z-index: -1; /* Coloca o vídeo atrás do conteúdo */
+}

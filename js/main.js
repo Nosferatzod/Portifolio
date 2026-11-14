@@ -18,17 +18,73 @@
             (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
     }
 
+    var THEME_COLOR = { light: '#fbfaf9', dark: '#0b0b0d', vortex: '#000000' };
+    var STORE_PREV = 'kf-theme-prev';   // tema normal para onde o segredo volta
+
+    // Tema secreto "Vórtice": fontes e animação só são baixadas na primeira vez que ele é ativado.
+    var vortexRequested = false;
+    function loadVortex() {
+        if (window.kfVortex) { window.kfVortex.start(); return; }
+        if (vortexRequested) return;
+        vortexRequested = true;
+
+        var fonts = document.createElement('link');
+        fonts.rel = 'stylesheet';
+        fonts.href = 'https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;500;600&family=Courier+Prime:wght@400;700&display=swap';
+        document.head.appendChild(fonts);
+
+        var s = document.createElement('script');
+        s.src = './js/vortex.js';
+        s.async = true;
+        document.head.appendChild(s);
+    }
+
+    function applyThemeExtras(theme) {
+        if (theme === 'vortex') loadVortex();
+        else if (window.kfVortex) window.kfVortex.stop();
+    }
+
     function setTheme(theme) {
         root.setAttribute('data-theme', theme);
         try { localStorage.setItem(STORE_THEME, theme); } catch (e) { }
         var meta = document.querySelector('meta[name="theme-color"]');
-        if (meta) meta.setAttribute('content', theme === 'dark' ? '#0b0b0d' : '#fbfaf9');
+        if (meta) meta.setAttribute('content', THEME_COLOR[theme] || THEME_COLOR.light);
+        applyThemeExtras(theme);
+    }
+
+    function previousTheme() {
+        var p = null;
+        try { p = localStorage.getItem(STORE_PREV); } catch (e) { }
+        return p === 'light' || p === 'dark' ? p : 'dark';
     }
 
     function initTheme() {
+        applyThemeExtras(currentTheme());
+
+        // Botão sol/lua: só claro ↔ escuro. Se o segredo estiver ativo, volta ao tema normal.
         document.querySelectorAll('[data-theme-toggle]').forEach(function (btn) {
             btn.addEventListener('click', function () {
-                setTheme(currentTheme() === 'dark' ? 'light' : 'dark');
+                var cur = currentTheme();
+                setTheme(cur === 'vortex' ? previousTheme() : cur === 'dark' ? 'light' : 'dark');
+            });
+        });
+
+        // Segredo: clicar no lírio da logo liga/desliga o tema Vórtice.
+        // (O nome ao lado continua levando para o início.)
+        document.querySelectorAll('.brand__mark').forEach(function (mark) {
+            mark.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                var cur = currentTheme();
+                if (cur === 'vortex') {
+                    setTheme(previousTheme());
+                } else {
+                    try { localStorage.setItem(STORE_PREV, cur); } catch (err) { }
+                    setTheme('vortex');
+                }
+                mark.classList.remove('is-spin');
+                void mark.offsetWidth; // reinicia a animação
+                mark.classList.add('is-spin');
             });
         });
     }

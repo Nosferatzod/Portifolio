@@ -1,0 +1,249 @@
+/* ============================================================
+   vortex.css — terceiro tema: "Vórtice"
+   Preto e branco, fundo de riscos de luz em espiral
+   (js/vortex.js, baixado só quando o tema é escolhido) e a
+   arte do Kurapika no lugar do cartão de código da home.
+
+   Tudo aqui fica atrás de :root[data-theme='vortex'], então os
+   temas claro e escuro não mudam. A imagem e as fontes do tema
+   também só são baixadas quando ele está ativo.
+
+   Leveza:
+   - nenhum backdrop-filter / filter: blur com o fundo animado
+     (o navegador teria que refazer o desfoque a cada quadro);
+   - a arte já vem em P&B (images/kurapika-bw.jpg, ~85 KB), sem
+     filtro CSS por cima.
+   ============================================================ */
+
+/* ---------- Ícone do botão de tema (vale para todos os temas) ---------- */
+.theme-toggle__vortex {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.4);
+    transition: transform var(--t-mid) var(--ease), opacity var(--t-fast) var(--ease);
+}
+
+:root[data-theme='vortex'] .theme-toggle__sun,
+:root[data-theme='vortex'] .theme-toggle__moon {
+    opacity: 0;
+    transform: rotate(70deg) scale(0.4);
+}
+
+:root[data-theme='vortex'] .theme-toggle__vortex {
+    opacity: 1;
+    transform: none;
+}
+
+/* Canvas do fundo (criado pelo vortex.js) */
+.vortex-sky {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    display: none;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+:root[data-theme='vortex'] .vortex-sky { display: block; opacity: 0.8; }
+
+/* Texto corrido legível por cima dos riscos (sombra estática, sem custo por quadro) */
+:root[data-theme='vortex'] p,
+:root[data-theme='vortex'] li,
+:root[data-theme='vortex'] dd,
+:root[data-theme='vortex'] dt {
+    text-shadow: 0 0 6px #000, 0 0 2px #000;
+}
+
+/* Arte da home: existe no HTML, mas só aparece neste tema */
+.portrait__art { display: none; }
+
+/* ---------- Tokens ---------- */
+:root[data-theme='vortex'] {
+    --font-display: 'Barlow', 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+    --font-body: 'Barlow', 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: 'Courier Prime', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+
+    --bg: #000000;
+    --bg-alt: #050505;
+    --surface: rgba(12, 12, 12, 0.86);
+    --surface-2: rgba(22, 22, 22, 0.9);
+    --border: rgba(255, 255, 255, 0.12);
+    --border-strong: rgba(255, 255, 255, 0.28);
+    --text: #ececec;
+    --text-2: #a9a9a9;
+    --text-3: #767676;
+    --accent: #ffffff;
+    --accent-2: #8c8c8c;
+    --accent-ink: #000000;
+    --accent-soft: rgba(255, 255, 255, 0.07);
+    --accent-line: rgba(255, 255, 255, 0.3);
+    --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.6), 0 4px 14px rgba(0, 0, 0, 0.5);
+    --shadow-2: 0 2px 6px rgba(0, 0, 0, 0.6), 0 18px 44px rgba(0, 0, 0, 0.7);
+    --glass: rgba(0, 0, 0, 0.86);
+    --grain: 0;
+
+    --r-sm: 2px;
+    --r-md: 3px;
+    --r-lg: 4px;
+
+    --vx-online: #6cc6d9;
+    color-scheme: dark;
+}
+
+/* ---------- Base ---------- */
+:root[data-theme='vortex'] .ambient { display: none; }
+
+:root[data-theme='vortex'] h1,
+:root[data-theme='vortex'] h2,
+:root[data-theme='vortex'] h3,
+:root[data-theme='vortex'] h4 {
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+:root[data-theme='vortex'] .eyebrow {
+    letter-spacing: 0.2em;
+    color: var(--text-3);
+}
+
+/* Header sem desfoque: sobre o fundo animado ele custaria caro */
+:root[data-theme='vortex'] .header.is-stuck {
+    background: var(--glass);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    border-bottom-color: var(--border);
+}
+
+:root[data-theme='vortex'] .nav__link { letter-spacing: 0.06em; }
+:root[data-theme='vortex'] .brand__mark { filter: grayscale(1); }
+
+/* ---------- Hero ---------- */
+:root[data-theme='vortex'] .hero__title {
+    font-weight: 300;
+    text-transform: uppercase;
+    line-height: 1.08;
+    text-shadow: 0 4px 24px #000;
+}
+
+/* Linha do meio só em contorno: o vórtice aparece por dentro */
+:root[data-theme='vortex'] .hero__title .text-gradient {
+    background: none;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.9);
+    text-shadow: none;
+}
+
+:root[data-theme='vortex'] .hero__role { font-family: var(--font-mono); }
+:root[data-theme='vortex'] .hero__desc { color: #cfcfcf; text-shadow: 0 1px 3px #000; }
+:root[data-theme='vortex'] .badge-live__dot { background: var(--vx-online); }
+
+:root[data-theme='vortex'] .portrait__glow { display: none; }
+
+:root[data-theme='vortex'] .portrait__frame {
+    border-color: rgba(255, 255, 255, 0.22);
+}
+
+:root[data-theme='vortex'] .portrait .codecard { display: none; }
+
+:root[data-theme='vortex'] .portrait__art {
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: #000 url('../images/kurapika-bw.jpg') 50% 28% / cover no-repeat;
+}
+
+/* Marcas de canto no quadro */
+:root[data-theme='vortex'] .portrait__art::before,
+:root[data-theme='vortex'] .portrait__art::after {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border: 0 solid #fff;
+}
+
+:root[data-theme='vortex'] .portrait__art::before { top: -1px; left: -1px; border-top-width: 2px; border-left-width: 2px; }
+:root[data-theme='vortex'] .portrait__art::after { right: -1px; bottom: -1px; border-right-width: 2px; border-bottom-width: 2px; }
+
+:root[data-theme='vortex'] .portrait__tag {
+    background: #000;
+    border-color: rgba(255, 255, 255, 0.25);
+    color: #ddd;
+}
+
+/* ---------- Componentes ---------- */
+:root[data-theme='vortex'] .btn--primary {
+    background: #fff;
+    color: #000;
+    box-shadow: none;
+}
+
+:root[data-theme='vortex'] .btn--primary:hover { background: #d9d9d9; }
+
+:root[data-theme='vortex'] .btn--ghost {
+    background: rgba(0, 0, 0, 0.55);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+:root[data-theme='vortex'] .btn--ghost:hover { background: #fff; color: #000; }
+
+:root[data-theme='vortex'] .marquee { background: rgba(0, 0, 0, 0.6); }
+
+:root[data-theme='vortex'] .stat { background: rgba(0, 0, 0, 0.75); }
+
+:root[data-theme='vortex'] .stat__num {
+    font-weight: 200;
+    background: none;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    color: #fff;
+}
+
+:root[data-theme='vortex'] .project__img { filter: grayscale(1) contrast(1.1); }
+:root[data-theme='vortex'] .project:hover .project__img { filter: none; }
+
+:root[data-theme='vortex'] .codecard {
+    --cc-kw: #ffffff;
+    --cc-prop: #bdbdbd;
+    --cc-str: #9fd6e2;
+    --cc-num: #d6d6d6;
+    --cc-fn: #ffffff;
+    --cc-punc: #777;
+    --cc-com: #666;
+}
+
+:root[data-theme='vortex'] .page-head h1 { font-weight: 300; }
+
+:root[data-theme='vortex'] .field input,
+:root[data-theme='vortex'] .field textarea { background: rgba(0, 0, 0, 0.6); }
+
+:root[data-theme='vortex'] .field__error { color: #f87171; }
+:root[data-theme='vortex'] .field.is-invalid input,
+:root[data-theme='vortex'] .field.is-invalid textarea { border-color: #f87171; }
+
+:root[data-theme='vortex'] .form-status.is-ok { color: #4ade80; }
+:root[data-theme='vortex'] .form-status.is-err { color: #f87171; }
+
+:root[data-theme='vortex'] .mobile-menu { background: #000; }
+
+/* ---------- Segredo: o lírio da logo liga/desliga o tema ---------- */
+.brand__mark { cursor: pointer; }
+
+.brand__mark.is-spin { animation: kf-lily-spin 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+
+@keyframes kf-lily-spin {
+    0% { transform: rotate(0) scale(1); }
+    45% { transform: rotate(200deg) scale(1.18); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .brand__mark.is-spin { animation: none; }
+}
